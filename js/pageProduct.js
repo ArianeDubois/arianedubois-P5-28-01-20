@@ -11,10 +11,9 @@ fetch(`http://localhost:3000/api/furniture/${idProduct()}`) //récupère le prod
 		displayProduct(product);
 		selectVarnish(product);
 		clicAddToCard(product);
-		console.log('hello');
 	});
 
-function displayProduct({ name, imageUrl: img, price, description, _id: id, varnish }) {
+function displayProduct({ name, imageUrl: img, price, description, varnish }) {
 	document.querySelector('.product').innerHTML += `<article class="article">
 		<h2 class="article-title">${name}</h2>
 		<div class="article-img-container">
@@ -23,32 +22,26 @@ function displayProduct({ name, imageUrl: img, price, description, _id: id, varn
 		<p class="article-text">${description}</p>
 		<p class="article-price">${price}€</p> 
 		<div class="varnishChoice">
-			<div>
-				<input type="radio" class="varnish" id="${varnish[0]}" name="varnish" value=${varnish[0]}">
-				<label for="${varnish[0]}">${varnish[0]}</label>
-			</div>
-			<div>
-				<input type="radio" class="varnish" id="${varnish[1]}" name="varnish" value="${varnish[1]}">
-				<label for="${varnish[1]}">${varnish[1]}</label>
-			</div>
-			<div>
-				<input type="radio" class="varnish" id="${varnish[2]}" name="varnish" value="${varnish[2]}">
-				<label for="${varnish[2]}">${varnish[2]}</label>
-			</div>
 		</div>
 		<button class="btn-add" type="button">Add to card +</button>
 	</article>`;
 
 	document.querySelector('.title').innerHTML += `<a class="homePageLink" href="../FRONT/index.html
 		`;
+	// Display varnishs choices
+	for (let i = 0; i < varnish.length; i++) {
+		let varnishContent = `<div> <input type="radio" class="varnish" id="${varnish[i]}" name="varnish" value="${varnish[i]}">
+		<label for="${varnish[i]}">${varnish[i]}</label></div>`;
+		let varnishChoiceContainer = document.querySelector('.varnishChoice');
+		varnishChoiceContainer.innerHTML += varnishContent;
+	}
 }
 
 function selectVarnish(product) {
 	document.addEventListener('change', (e) => {
 		let isChecked = e.target.checked;
 		if (isChecked == true) {
-			let selection = e.target.value;
-			console.log(product.varnishSelect);
+			let selection = e.target.value; // prend que le premier mot du varnish
 			product.varnishSelect = selection;
 		}
 	});

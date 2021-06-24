@@ -1,17 +1,14 @@
-// delete ex description...
+let cart = JSON.parse(localStorage.getItem('cart')) || []; // recuperer les valeurs du local storage ou retourner un tableau vide
 
-let cart = JSON.parse(localStorage.getItem('cart')) || []; // const
-// let totalPriceCart = 0; // initailisation globale de la varioable pour pouvoir lui assigner les valeurs (+=)
 let totalPriceArticle = 0;
 let totalPriceCart = 0; // initailisation globale de la varioable pour pouvoir lui assigner les valeurs (+=)
 let totalPriceDisplay = document.querySelector('.cart-infos-total');
-// recuperer les valeurs du local storage ou retourner un tableau vide
 
 cart.forEach((article, index) => {
 	displayArticleToCart(article);
-	removeArticleCart(article, index);
 	changeQuantity(article, index);
 	displayTotalPrice(article, index);
+	// // removeArticle(article, index);
 });
 
 function displayArticleToCart({ name, imageUrl: img, price, _id: id, quantity, varnishSelect }) {
@@ -30,15 +27,15 @@ function displayArticleToCart({ name, imageUrl: img, price, _id: id, quantity, v
 	document.querySelector('.cart-content-add').appendChild(onCartArticle);
 }
 
-function removeArticleCart(article, index) {
-	document.querySelectorAll('.btn-remove').forEach((crossButton) => {
-		crossButton.addEventListener('click', (e) => {
-			cart.splice(index, 1);
-			e.target.parentElement.remove(); // suprime visulemeent l'article du panier
-			cart = localStorage.setItem('cart', JSON.stringify(cart)); // envoie les nouveaux compte du panier a local storage
-		});
+//remove Article
+document.querySelectorAll('.btn-remove').forEach((crossButton, index) => {
+	crossButton.addEventListener('click', (e) => {
+		cart.splice(index, 1);
+		e.target.parentElement.remove();
+		localStorage.setItem('cart', JSON.stringify(cart)); //envoie les nouveaux compte du panier a local storage
+		window.location.reload(); //rafraichir la page pour renvoyer les nouvelles données panier
 	});
-}
+});
 
 function displayTotalPrice(article, index) {
 	totalPriceArticle = article.quantity * article.price;
@@ -46,7 +43,6 @@ function displayTotalPrice(article, index) {
 	totalPriceDisplay.textContent = `Total:${totalPriceCart} €`;
 	localStorage.setItem('totalPriceCart', JSON.stringify(totalPriceCart));
 }
-console.log(totalPriceCart);
 
 function changeQuantity(article, index) {
 	let buttonQuantity = document.querySelectorAll('.cart-article-quantity');
@@ -57,9 +53,6 @@ function changeQuantity(article, index) {
 		quantityStorage = parseInt(e.target.value);
 		totalPriceArticle = article.quantity * article.price;
 		// console.log(quantity);
-		// document.querySelectorAll('.cart-article-price')[
-		// 	index
-		// ].textContent = `${article.price}  => ${totalPriceArticle} €`;
 
 		//ici ne marche qu'avec la quantité, et garde en mémoire la quantiité enregistrée au début
 		if (quantityStorage > article.quantity) {
