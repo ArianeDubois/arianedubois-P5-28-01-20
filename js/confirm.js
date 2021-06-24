@@ -3,6 +3,7 @@ localStorage.removeItem('cart'); //supprime le panier du local storage
 
 let contact = JSON.parse(localStorage.getItem('contact')); // const
 let resumeOrder = JSON.parse(localStorage.getItem('resOrder')); // const
+let totalOrder = JSON.parse(localStorage.getItem('totalPriceCart')); // const
 console.log(resumeOrder);
 //message confirmation
 document.querySelector(
@@ -12,7 +13,7 @@ document.querySelector(
 //message récapitulatif
 document.querySelector('.recapitulatif-order-numero').textContent = `n°${resumeOrder.orderId}`;
 document.querySelector('.recapitulatif-order-product').textContent = `${resumeOrder.products}`;
-document.querySelector('.recapitulatif-order-total').textContent = `${resumeOrder.products.name}€`; //boucle sur les products.name
+document.querySelector('.recapitulatif-order-total').textContent = `${totalOrder}€`; //boucle sur les products.name
 let nameOrderProduct = resumeOrder.products.forEach((name) => {
 	name.name;
 	console.log(name.name);

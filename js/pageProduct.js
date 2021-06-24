@@ -11,6 +11,7 @@ fetch(`http://localhost:3000/api/furniture/${idProduct()}`) //récupère le prod
 		displayProduct(product);
 		selectVarnish(product);
 		clicAddToCard(product);
+		console.log('hello');
 	});
 
 function displayProduct({ name, imageUrl: img, price, description, _id: id, varnish }) {
@@ -26,12 +27,10 @@ function displayProduct({ name, imageUrl: img, price, description, _id: id, varn
 				<input type="radio" class="varnish" id="${varnish[0]}" name="varnish" value=${varnish[0]}">
 				<label for="${varnish[0]}">${varnish[0]}</label>
 			</div>
-
 			<div>
 				<input type="radio" class="varnish" id="${varnish[1]}" name="varnish" value="${varnish[1]}">
 				<label for="${varnish[1]}">${varnish[1]}</label>
 			</div>
-
 			<div>
 				<input type="radio" class="varnish" id="${varnish[2]}" name="varnish" value="${varnish[2]}">
 				<label for="${varnish[2]}">${varnish[2]}</label>
@@ -56,7 +55,6 @@ function selectVarnish(product) {
 
 	return product.varnishSelect;
 }
-
 function clicAddToCard(product) {
 	let addButton = document.querySelector('.btn-add');
 	// recuperation du panier dans le local storage

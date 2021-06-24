@@ -46,6 +46,7 @@ function displayTotalPrice(article, index) {
 	totalPriceDisplay.textContent = `Total:${totalPriceCart} €`;
 	localStorage.setItem('totalPriceCart', JSON.stringify(totalPriceCart));
 }
+console.log(totalPriceCart);
 
 function changeQuantity(article, index) {
 	let buttonQuantity = document.querySelectorAll('.cart-article-quantity');
