@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>My shopping-cart</title>
+	</head>
+
+	<body>
+		<header>
+			<a class="logo-homepage-link" href="index.html">Orinoco</a>
+		</header>
+
+		<section class="cart">
+			<h1 class="cart-title">CART</h1>
+			<div class="cart-infos">
+				<h2 class="cart-infos-subtitle">Article</h2>
+				<h2 class="cart-infos-subtitle">Price</h2>
+				<h2 class="cart-infos-subtitle">Quantity</h2>
+				<h2 class="cart-infos-subtitle">Delete</h2>
+			</div>
+			<div class="cart-content-add"></div>
+			<p>
+				<strong class="cart-infos-total"></strong>
+			</p>
+			<a class="homepage-link" href="index.html">Continue my shopping</a>
+		</section>
+
+		<section class="paiement">
+			<h1 class="paiement-title">PAIEMENT</h1>
+
+			<!-- <form method="POST" action="validationCommande.html"> -->
+			<form method="POST" action="">
+				<fieldset class="form-infos">
+					<legend>infos</legend>
+
+					<label for="firstName">first name</label>
+					<input type="text" name="firstName" id="firstName" required />
+
+					<label for="lastName">last name</label>
+					<input type="text" name="lastName" id="lastName" required />
+
+					<label for="addressMail">email</label>
+					<input
+						type="email"
+						name="addressMail"
+						id="addressMail"
+						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+						required
+					/>
+				</fieldset>
+
+				<fieldset class="form-address">
+					<legend>address</legend>
+
+					<label for="residentialAddress">residential address</label>
+					<input
+						type="textearea"
+						name="residentialAddress"
+						id="residentialAddress"
+						required
+					/>
+
+					<label for="city">city</label>
+					<input type="city" name="city" id="city" required />
+
+					<label for="number">poastal code</label>
+					<input type="text" name="number" id="number" pattern="[0-9]{5}" required />
+				</fieldset>
+
+				<button type="button" class="button success" id="check">checkValidity()</button>
+
+				<input type="submit" name="submit" id="submit" value="Checkout" />
+
+				<div id="invalideMessage"></div>
+			</form>
+		</section>
+	</body>
+	<script src="shoppingCart.js"></script>
+	<script src="formulaire.js"></script>
+</html>
+<!-- function removeArticleCart(index) {
+	document.querySelectorAll('.btn-remove').forEach((crossButton) => {
+		crossButton.addEventListener('click', (e) => {
+			// if (cart) {
+			// }
+			cart = localStorage.setItem('cart', JSON.stringify(cart));
+			cart.splice(index, 1); //
+
+			e.target.parentElement.remove(); // suprime visulemeent l'article du panier
+		});
+	});
+} -->
