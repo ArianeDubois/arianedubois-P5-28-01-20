@@ -21,19 +21,3 @@ function displayFurniture({ name, imageUrl: img, price, _id: id }) {
         </a>
     </article>`;
 }
-
-// function printContact({ firstName, lastName, address }) {
-// 	console.log(firstName);
-// 	console.log(lastName);
-// 	console.log(address);
-// }
-// const contact = {
-// 	firstName: 'John',
-// 	lastName: 'Doe',
-// 	address: '11 rue de bois',
-// };
-
-// printContact(contact);
-
-// il faut tous les lancer d'habbord un par un ?
-// on a besoin d'une connnection internet ?

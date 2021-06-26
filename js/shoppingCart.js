@@ -1,6 +1,7 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || []; // recuperer les valeurs du local storage ou retourner un tableau vide
 
 let totalPriceArticle = 0;
+let articleQty = 0;
 let totalPriceCart = 0; // initailisation globale de la varioable pour pouvoir lui assigner les valeurs (+=)
 let totalPriceDisplay = document.querySelector('.cart-infos-total');
 
@@ -38,7 +39,7 @@ document.querySelectorAll('.btn-remove').forEach((crossButton, index) => {
 });
 
 function displayTotalPrice(article, index) {
-	totalPriceArticle = article.quantity * article.price;
+	totalPriceArticle = articleQty * article.price;
 	totalPriceCart += totalPriceArticle;
 	totalPriceDisplay.textContent = `Total:${totalPriceCart} €`;
 	localStorage.setItem('totalPriceCart', JSON.stringify(totalPriceCart));
@@ -47,20 +48,15 @@ function displayTotalPrice(article, index) {
 function changeQuantity(article, index) {
 	let buttonQuantity = document.querySelectorAll('.cart-article-quantity');
 	let totalPriceDisplay = document.querySelector('.cart-infos-total');
+	articleQty = article.quantity;
 
 	buttonQuantity[index].addEventListener('change', function (e) {
-		let quantityStorage = article.quantity;
-		quantityStorage = parseInt(e.target.value);
+		// let quantityStorage = article.quantity;
+		articleQty = parseInt(e.target.value);
+		cart[index].quantity = articleQty;
+		cart[index].quantity = localStorage.setItem('cart', JSON.stringify(cart)); //envoie nv valeurs de quntité au local storage
+		window.location.reload();
 		totalPriceArticle = article.quantity * article.price;
-		// console.log(quantity);
-
-		//ici ne marche qu'avec la quantité, et garde en mémoire la quantiité enregistrée au début
-		if (quantityStorage > article.quantity) {
-			totalPriceCart += article.price;
-		} else if (quantityStorage < article.quantity) {
-			totalPriceCart -= article.price; //  * article.quantity
-		}
-
 		totalPriceDisplay.textContent = `Total:${totalPriceCart} €`;
 	});
 }

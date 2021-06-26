@@ -21,8 +21,7 @@ function displayProduct({ name, imageUrl: img, price, description, varnish }) {
 		</div>
 		<p class="article-text">${description}</p>
 		<p class="article-price">${price}€</p> 
-		<div class="varnishChoice">
-		</div>
+		<div class="varnishChoice"></div>
 		<button class="btn-add" type="button">Add to card +</button>
 	</article>`;
 

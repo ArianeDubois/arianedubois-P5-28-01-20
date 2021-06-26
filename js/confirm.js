@@ -4,12 +4,13 @@ localStorage.removeItem('cart'); //supprime le panier du local storage
 // let contact = JSON.parse(localStorage.getItem('contact')); // const ?
 let resumeOrder = JSON.parse(localStorage.getItem('resOrder')); // const
 let totalOrder = JSON.parse(localStorage.getItem('totalPriceCart')); // const
-console.log(resumeOrder.contact);
+console.log(resumeOrder);
 
 // //message confirmation
 document.querySelector(
 	'.confirmation-order-message'
-).textContent = `Thank you ${resumeOrder.contact.firstName}, your order n°${resumeOrder.orderId} is being prepared for shipment. We have sent you a confirmation email to this address ${resumeOrder.contact.email}`; //change camel Case en css
+).textContent = `Thank you ${resumeOrder.contact.firstName}, your order n°${resumeOrder.orderId} is being prepared for shipment. We have sent you a confirmation email to this address ${resumeOrder.contact.email}`; //change camel Case en css,
+//revoir la longueur du numero de commande
 
 //message récapitulatif
 document.querySelector('.recapitulatif-order-numero').textContent = `n°${resumeOrder.orderId}`;

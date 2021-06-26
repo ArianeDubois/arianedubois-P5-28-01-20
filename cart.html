@@ -29,12 +29,12 @@
 		</section>
 
 		<section class="paiement">
-			<h1 class="paiement-title">PAIEMENT</h1>
+			<h1 class="paiement-title">Validate my order</h1>
 
 			<!-- <form method="POST" action="validationCommande.html"> -->
 			<form method="POST" action="">
 				<fieldset class="form-infos">
-					<legend>infos</legend>
+					<legend>your informations</legend>
 
 					<label for="firstName">first name</label>
 					<input type="text" name="firstName" id="firstName" required />
@@ -53,7 +53,7 @@
 				</fieldset>
 
 				<fieldset class="form-address">
-					<legend>address</legend>
+					<legend>delivery</legend>
 
 					<label for="residentialAddress">residential address</label>
 					<input
@@ -78,15 +78,3 @@
 	<script src="js/shoppingCart.js"></script>
 	<script src="js/formulaire.js"></script>
 </html>
-<!-- function removeArticleCart(index) {
-	document.querySelectorAll('.btn-remove').forEach((crossButton) => {
-		crossButton.addEventListener('click', (e) => {
-			// if (cart) {
-			// }
-			cart = localStorage.setItem('cart', JSON.stringify(cart));
-			cart.splice(index, 1); //
-
-			e.target.parentElement.remove(); // suprime visulemeent l'article du panier
-		});
-	});
-} -->
