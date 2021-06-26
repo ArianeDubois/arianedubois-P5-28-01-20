@@ -11,14 +11,41 @@
 
 	<body>
 		<main>
-			<h1 class="title">Orinico</h1>
-			<a class="homePageLink" href="index.html">Acceuil<a>
+			<header class="header">
+				<a class="homePageLink" href="index.html"> <h1 class="header-title">Orinico</h1></a>
+				<a href="cart.html" class="header-cart"
+					><img class="header-cart-picto" src="images/cart.png" alt="picto cart"
+				/></a>
+			</header>
+			<div class="header-border"></div>
 
-			<a class="cart-link" href="cart.html"> View my cart </a>
+			<div class="product">
+				<!-- <article class="article">
+					<h2 class="article-title">${name}</h2>
+					<div class="article-img-container">
+						<img src=" ${img} " id="article-img" class="article-img">
+					</div>
+					<p class="article-text">${description}</p>
+					<p class="article-price">${price}€</p> 
+					<div class="varnishChoice">
 
-			<div class="product"></div>
-	
+						
+							<input type="radio" class="varnish" id="${varnish[i]}" name="varnish" value="${varnish[i]}">
+							<label for="${varnish[i]}">${varnish[i]}</label>
+				
+						
+					</div>
+					<button class="btn-add" type="button">Add to card +</button>
+				</article> -->
+			</div>
 		</main>
+		<div class="footer-border"></div>
+
+		<footer class="footer">
+			<h3 class="footer-contact">Contact</h3>
+			<h3 class="footer-mentions"></h3>
+			<h3 class="footer-about">About</h3>
+		</footer>
 
 		<script src="js/pageProduct.js"></script>
 	</body>

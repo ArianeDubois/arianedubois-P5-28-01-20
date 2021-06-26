@@ -1,34 +1,141 @@
 body {
 	background-color: white;
+	font-family: Helvetica, sans-serif;
 }
 
+.header {
+	display: flex;
+	justify-content: space-between;
+	width: 100vw;
+	position: fixed;
+}
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-weight: initial;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.header-cart-picto {
+	width: 50px;
+	height: auto;
+	margin: 1vw;
+}
+
+.header-title {
+	margin: 1vw;
+}
+
+.header-border {
+	border-bottom: 3px solid black;
+	width: 100%;
+	top: 60px;
+	position: fixed;
+	z-index: -10;
+}
 .furnitures {
 	width: 100vw;
+	position: relative;
+	top: 10vh;
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	max-width: 70%;
+	margin: auto;
 }
 
-.article {
+.article-page {
+	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	width: 500px;
-	height: 500px;
+	height: 400px;
 	margin-bottom: 80px;
-	border: 1px solid black;
+	border: 3px solid black;
+	background-color: white;
+}
+.article-title,
+.article-price {
+	display: flex;
+	justify-content: center;
 }
 
+.article-price {
+	font-size: 25px;
+}
 .article-img-container {
-	height: 60%;
+	max-height: 70%;
 	display: flex;
 	justify-content: center;
 }
 
 .article-img {
 	height: 100%;
+	width: auto;
 }
 
-.article-text {
-	flex-wrap: wrap;
+.footer-border {
+	border-top: 3px solid black;
+	width: 100%;
+	bottom: 60px;
+	position: fixed;
+	z-index: -10;
+}
+.footer {
+	display: flex;
+	width: 100%;
+	position: fixed;
+	bottom: 1vw;
+	justify-content: space-between;
+	font-size: 25px;
+}
+
+/* product */
+
+.product {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.product .article {
+	position: relative;
+
+	padding: 1vw;
+	/* max-width: 23vw;  calc */
+	/* height: calc */
+	height: 85%;
+	margin-bottom: 60px;
+	max-width: 23vw;
+	position: relative;
+	top: 60px;
+	display: flex;
+	flex-direction: column;
+}
+.product .varnishChoice {
+	display: flex;
+	justify-content: space-between;
+}
+
+.product .article-img-container img {
+	max-height: calc(100vh - 125px);
+	position: fixed;
+	/* z-index: -20px; */
+	left: 0;
+	top: 62px;
+}
+
+.product .article .btn-add {
+	margin: auto;
+	position: absolute;
+	bottom: 1vw;
+	left: 50%;
 }
 
 /* cart */

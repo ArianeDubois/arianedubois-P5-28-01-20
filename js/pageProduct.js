@@ -25,11 +25,12 @@ function displayProduct({ name, imageUrl: img, price, description, varnish }) {
 		<button class="btn-add" type="button">Add to card +</button>
 	</article>`;
 
-	document.querySelector('.title').innerHTML += `<a class="homePageLink" href="../FRONT/index.html
-		`;
+	// document.querySelector('.title').innerHTML += `<a class="homePageLink" href="../FRONT/index.html
+	// 	`;
+
 	// Display varnishs choices
 	for (let i = 0; i < varnish.length; i++) {
-		let varnishContent = `<div> <input type="radio" class="varnish" id="${varnish[i]}" name="varnish" value="${varnish[i]}">
+		let varnishContent = `<div><input type="radio" class="varnish" id="${varnish[i]}" name="varnish" value="${varnish[i]}">
 		<label for="${varnish[i]}">${varnish[i]}</label></div>`;
 		let varnishChoiceContainer = document.querySelector('.varnishChoice');
 		varnishChoiceContainer.innerHTML += varnishContent;

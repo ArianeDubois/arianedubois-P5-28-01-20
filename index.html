@@ -6,18 +6,41 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
 		<title>Orinico</title>
-		<a href="cart.html" class="my-cart"> <h2 class="my-cart-text">My card</h2></a>
 	</head>
 
 	<body>
+		<header class="header">
+			<h1 class="header-title">Orinico</h1>
+			<a href="cart.html" class="header-cart"
+				><img class="header-cart-picto" src="images/cart.png" alt="picto cart"
+			/></a>
+		</header>
+		<div class="header-border"></div>
+
 		<main>
-			<h1 class="title">Orinico</h1>
-
-			<!-- section furniture -->
-			<div class="furnitures"></div>
+			<!-- JS
+			 -->
+			<div class="furnitures">
+				<!-- <article class="article">
+					<a class="article-page" href="product.html?id=${id}">
+						<h2 class="article-title">${name}</h2>
+						<div class="article-img-container">
+							<img src="${img}" class="article-img"/>
+			
+						</div>
+						<p class="article-price">${price} €</p>
+					</a>
+				</article>; -->
+			</div>
 		</main>
-		<!-- <script src="../BACK/models/Furniture.js"></script> -->
 
+		<div class="footer-border"></div>
+
+		<footer class="footer">
+			<h3 class="footer-contact">Contact</h3>
+			<h3 class="footer-mentions"></h3>
+			<h3 class="footer-about">About</h3>
+		</footer>
 		<script src="js/index.js"></script>
 	</body>
 </html>
