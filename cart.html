@@ -9,71 +9,90 @@
 	</head>
 
 	<body>
-		<header>
-			<a class="logo-homepage-link" href="index.html">Orinoco</a>
+		<header class="header">
+			<a class="homePageLink" href="index.html">
+				<h1 class="header-title">Orinico - my cart</h1></a
+			>
+			<a href="cart.html" class="header-cart"></a>
 		</header>
 
-		<section class="cart">
-			<h1 class="cart-title">CART</h1>
-			<div class="cart-infos">
-				<h2 class="cart-infos-subtitle">Article</h2>
-				<h2 class="cart-infos-subtitle">Price</h2>
-				<h2 class="cart-infos-subtitle">Quantity</h2>
-				<h2 class="cart-infos-subtitle">Delete</h2>
-			</div>
-			<div class="cart-content-add"></div>
-			<p>
-				<strong class="cart-infos-total"></strong>
-			</p>
-			<a class="homepage-link" href="index.html">Continue my shopping</a>
-		</section>
+		<div class="header-border"></div>
+		<main class="main-cart">
+			<section class="cart">
+				<div class="cart-infos">
+					<h2 class="cart-infos-subtitle">Article</h2>
+					<h2 class="cart-infos-subtitle">Price</h2>
+					<h2 class="cart-infos-subtitle">Varnish</h2>
+					<h2 class="cart-infos-subtitle">Quantity</h2>
+					<h2 class="cart-infos-subtitle">Delete</h2>
+				</div>
+				<div class="cart-content-add">
+					<!-- <div>
+					<div class="cart-article" >
+						<img src=" ${img}" class="cart-article-img">
+						<p class="cart-article-title"> ${name}</p>
+						<p class="cart-article-price">${price}</p> 
+						<p class="cart-article-varnish">${varnishSelect}</p> 
+						<input id="${id}" class="cart-article-quantity"  type="number" value="${quantity}"  min="1" max="10">
+						<button class="btn-remove" type="button">X</button>
+				</div> -->
+				</div>
+				<p>
+					<strong class="cart-infos-total"></strong>
+				</p>
+				<a class="homepage-link" href="index.html">Continue my shopping</a>
+			</section>
 
-		<section class="paiement">
-			<h1 class="paiement-title">Validate my order</h1>
+			<section class="paiement">
+				<h1 class="paiement-title">Validate my order</h1>
 
-			<!-- <form method="POST" action="validationCommande.html"> -->
-			<form method="POST" action="">
-				<fieldset class="form-infos">
-					<legend>your informations</legend>
+				<!-- <form method="POST" action="validationCommande.html"> -->
+				<form method="POST" action="">
+					<fieldset class="form-infos">
+						<label for="firstName">first name</label>
+						<input type="text" name="firstName" id="firstName" required />
 
-					<label for="firstName">first name</label>
-					<input type="text" name="firstName" id="firstName" required />
+						<label for="lastName">last name</label>
+						<input type="text" name="lastName" id="lastName" required />
 
-					<label for="lastName">last name</label>
-					<input type="text" name="lastName" id="lastName" required />
+						<label for="addressMail">email</label>
+						<input
+							type="email"
+							name="addressMail"
+							id="addressMail"
+							pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+							required
+						/>
+					</fieldset>
 
-					<label for="addressMail">email</label>
-					<input
-						type="email"
-						name="addressMail"
-						id="addressMail"
-						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-						required
-					/>
-				</fieldset>
+					<fieldset class="form-address">
+						<label for="residentialAddress">residential address</label>
+						<input
+							type="textearea"
+							name="residentialAddress"
+							id="residentialAddress"
+							required
+						/>
 
-				<fieldset class="form-address">
-					<legend>delivery</legend>
+						<label for="city">city</label>
+						<input type="city" name="city" id="city" required />
 
-					<label for="residentialAddress">residential address</label>
-					<input
-						type="textearea"
-						name="residentialAddress"
-						id="residentialAddress"
-						required
-					/>
+						<label for="number">poastal code</label>
+						<input type="text" name="number" id="number" pattern="[0-9]{5}" required />
+					</fieldset>
 
-					<label for="city">city</label>
-					<input type="city" name="city" id="city" required />
-
-					<label for="number">poastal code</label>
-					<input type="text" name="number" id="number" pattern="[0-9]{5}" required />
-				</fieldset>
+					<div id="invalideMessage"></div>
+				</form>
 				<input type="submit" name="submit" id="submit" value="Checkout" />
+			</section>
+		</main>
+		<div class="footer-border"></div>
 
-				<div id="invalideMessage"></div>
-			</form>
-		</section>
+		<footer class="footer">
+			<h3 class="footer-contact">Contact</h3>
+			<h3 class="footer-mentions"></h3>
+			<h3 class="footer-about">About</h3>
+		</footer>
 	</body>
 	<script src="js/shoppingCart.js"></script>
 	<script src="js/formulaire.js"></script>

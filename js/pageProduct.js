@@ -51,12 +51,23 @@ function selectVarnish(product) {
 function clicAddToCard(product) {
 	let addButton = document.querySelector('.btn-add');
 	// recuperation du panier dans le local storage
+
+	//[{1 qty :3}{2, qty :10}]
+
+	//.length
+
+	//classe notification
 	addButton.addEventListener('click', () => {
 		let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
 		//parcuorir les élements du localStorage
 		let producExistInCart = false;
 		//compare les valeur du produit selectionné avec les valeurs enregistrées dans le localstorage
+		let cartIcone = document.querySelector('.header-cart');
+		cartIcone.classList.add('header-cart-notification');
+		let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
 		cart.forEach((element) => {
+			quantityInCart += element.quantity;
+
 			if (element._id === product._id && selectVarnish(product) === element.varnishSelect) {
 				element.quantity++;
 				producExistInCart = true;
@@ -66,7 +77,12 @@ function clicAddToCard(product) {
 			//false
 			cart.push(product); // si le produit n'est pas dans le panier on push
 		}
+		cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${
+			quantityInCart + 1
+		}</div>`; //recupère quantitée dans le panier et ajoute le dernier
 		cart = localStorage.setItem('cart', JSON.stringify(cart));
 		// envoie au local storage les nouvelle valeur
 	});
 }
+
+//add to cart

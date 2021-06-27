@@ -22,7 +22,7 @@ function displayArticleToCart({ name, imageUrl: img, price, _id: id, quantity, v
     <p class="cart-article-price">${price}</p> 
     <p class="cart-article-varnish">${varnishSelect}</p> 
     <input id="${id}" class="cart-article-quantity"  type="number" value="${quantity}"  min="1" max="10">
-    <button class="btn-remove" type="button">X</button>
+    <button class="btn-remove" type="button">X</button></div>
     `;
 	onCartArticle.innerHTML += onCartArticleContent; //ajouter le contenu html à la div produit
 	document.querySelector('.cart-content-add').appendChild(onCartArticle);

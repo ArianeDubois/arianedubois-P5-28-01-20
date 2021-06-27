@@ -1,8 +1,21 @@
 body {
 	background-color: white;
+	color: blueviolet;
 	font-family: Helvetica, sans-serif;
 }
 
+/* .border {
+	border: 2px solid rgb(0, 0, 0);
+	margin-bottom: 55px;
+}
+
+.background {
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -10;
+	position: fixed;
+} */
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -21,10 +34,21 @@ a {
 	color: inherit;
 }
 
-.header-cart-picto {
-	width: 50px;
-	height: auto;
+.header-cart {
+	position: relative;
+	font-size: 35px;
 	margin: 1vw;
+	display: flex;
+}
+
+.cart-number {
+	font-size: 20px;
+	align-self: center;
+}
+
+/* il faut regarder le compte avec la quantity */
+.header-cart-notification {
+	color: rgb(190, 190, 190);
 }
 
 .header-title {
@@ -32,7 +56,7 @@ a {
 }
 
 .header-border {
-	border-bottom: 3px solid black;
+	border-bottom: 3px solid blueviolet;
 	width: 100%;
 	top: 60px;
 	position: fixed;
@@ -56,7 +80,8 @@ a {
 	width: 500px;
 	height: 400px;
 	margin-bottom: 80px;
-	border: 3px solid black;
+	border: 3px solid blueviolet;
+	border-radius: 2em;
 	background-color: white;
 }
 .article-title,
@@ -77,10 +102,11 @@ a {
 .article-img {
 	height: 100%;
 	width: auto;
+	border-radius: 0 2em 2em 0;
 }
 
 .footer-border {
-	border-top: 3px solid black;
+	border-top: 3px solid blueviolet;
 	width: 100%;
 	bottom: 60px;
 	position: fixed;
@@ -139,20 +165,49 @@ a {
 }
 
 /* cart */
+.main-cart {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: space-around;
+}
 .cart,
 .paiement {
-	border: 1px solid black;
+	border: 2px solid blueviolet;
 	display: flex;
-	margin: 30px auto 30px auto;
 	flex-direction: column;
 	align-self: center;
-	max-width: 50%;
+	width: 50%;
+	background-color: white;
+}
+
+.paiement form {
+	display: flex;
+	justify-content: space-around;
+	/* margin: 60px; */
+}
+
+.form-infos,
+.form-address {
+	display: flex;
+	border: none;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 20px;
+	width: 40%;
+}
+.paiement #submit {
+	margin: auto;
+}
+
+.paiement-title {
+	border-bottom: 2px solid blueviolet;
 }
 
 .cart-infos {
 	display: flex;
 	justify-content: space-around;
-	border-bottom: 1px solid black;
+	border-bottom: 2px solid blueviolet;
 }
 
 .cart-content-add {
@@ -164,7 +219,7 @@ a {
 	display: flex;
 	height: 100px;
 	align-items: baseline;
-	border-bottom: 1px solid black;
+	border-bottom: 2px solid blueviolet;
 }
 .cart-article-img {
 	max-width: 100%;
@@ -172,8 +227,11 @@ a {
 }
 
 .cart-article-title,
-.cart-article-price {
+.cart-article-price,
+.cart-article-varnish,
+.cart-infos-total {
 	margin: auto;
+	font-size: 20px;
 }
 
 .btn-remove {
@@ -185,4 +243,21 @@ a {
 	height: 20px;
 	width: 40px;
 	margin: auto;
+}
+
+/* confirmation */
+.confirm-order-main {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	top: 60px;
+	position: relative;
+	margin: auto;
+}
+.confirmation,
+.recapitulatif {
+	margin: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }

@@ -21,3 +21,7 @@ function displayFurniture({ name, imageUrl: img, price, _id: id }) {
         </a>
     </article>`;
 }
+
+// for (let i = 0; i < 20; i++) {
+// 	document.querySelector('.background').innerHTML += `<div class="border" id='${i}'></div>`;
+// }
