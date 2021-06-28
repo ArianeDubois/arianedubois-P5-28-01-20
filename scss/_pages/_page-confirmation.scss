@@ -1,0 +1,14 @@
+.confirm-order-main {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	top: 60px;
+	position: relative;
+	margin: auto;
+}
+.confirmation,
+.recapitulatif {
+	margin: 30px;
+	display: flex;
+	flex-direction: column;
+}

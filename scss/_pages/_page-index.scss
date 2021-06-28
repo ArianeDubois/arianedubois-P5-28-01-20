@@ -1,0 +1,58 @@
+.furnitures {
+	width: 100vw;
+	position: relative;
+	top: 10vh;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	max-width: 70%;
+	margin: auto;
+}
+
+.article-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 500px;
+	height: 400px;
+	margin-bottom: 80px;
+	border: 3px solid blueviolet;
+	border-radius: 2em;
+	background-color: white;
+}
+.article-title,
+.article-price {
+	display: flex;
+	justify-content: center;
+}
+
+.article-price {
+	font-size: 25px;
+}
+.article-img-container {
+	max-height: 70%;
+	display: flex;
+	justify-content: center;
+}
+
+.article-img {
+	height: 100%;
+	width: auto;
+	border-radius: 0 2em 2em 0;
+}
+
+.footer-border {
+	border-top: 3px solid blueviolet;
+	width: 100%;
+	bottom: 60px;
+	position: fixed;
+	z-index: -10;
+}
+.footer {
+	display: flex;
+	width: 100%;
+	position: fixed;
+	bottom: 1vw;
+	justify-content: space-between;
+	font-size: 25px;
+}

@@ -1,0 +1,22 @@
+{
+	"name": "front",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"sass": "sass --watch ./scss/main.scss:./main.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ArianeDubois/arianedubois-05-.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ArianeDubois/arianedubois-05-/issues"
+	},
+	"homepage": "https://github.com/ArianeDubois/arianedubois-05-#readme",
+	"dependencies": {
+		"sass": "^1.35.1"
+	}
+}

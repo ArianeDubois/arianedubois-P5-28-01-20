@@ -1,0 +1,291 @@
+body {
+  color: blueviolet;
+  font-family: Helvetica, sans-serif;
+}
+
+a.button {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  position: fixed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: initial;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-cart {
+  position: relative;
+  font-size: 35px;
+  margin: 1vw;
+  display: flex;
+}
+
+.cart-number {
+  font-size: 20px;
+  align-self: center;
+}
+
+/* il faut regarder le compte avec la quantity */
+.header-cart-notification {
+  color: #a8cde6;
+}
+
+.header-title {
+  margin: 1vw;
+}
+
+.header-border {
+  border-bottom: 3px solid blueviolet;
+  width: 100%;
+  top: 60px;
+  position: fixed;
+  z-index: -10;
+}
+
+.furnitures {
+  width: 100vw;
+  position: relative;
+  top: 10vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 70%;
+  margin: auto;
+}
+
+.article-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+  height: 400px;
+  margin-bottom: 80px;
+  border: 3px solid blueviolet;
+  border-radius: 2em;
+  background-color: white;
+}
+
+.article-title,
+.article-price {
+  display: flex;
+  justify-content: center;
+}
+
+.article-price {
+  font-size: 25px;
+}
+
+.article-img-container {
+  max-height: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.article-img {
+  height: 100%;
+  width: auto;
+  border-radius: 0 2em 2em 0;
+}
+
+.footer-border {
+  border-top: 3px solid blueviolet;
+  width: 100%;
+  bottom: 60px;
+  position: fixed;
+  z-index: -10;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 1vw;
+  justify-content: space-between;
+  font-size: 25px;
+}
+
+.product {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product .article {
+  position: relative;
+  padding: 1vw;
+  /* max-width: 23vw;  calc */
+  /* height: calc */
+  height: 85%;
+  margin-bottom: 60px;
+  max-width: 23vw;
+  position: relative;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product .varnishChoice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product .article-img-container img {
+  max-height: calc(100vh - 125px);
+  position: fixed;
+  /* z-index: -20px; */
+  left: 0;
+  top: 62px;
+}
+
+.product .article .btn-add {
+  margin: auto;
+  position: absolute;
+  bottom: 1vw;
+  left: 50%;
+}
+
+button.btn-add {
+  border: none;
+  background-color: transparent;
+  border: 3px solid blueviolet;
+  font-weight: 500;
+  color: blueviolet;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.confirm-order-main {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  top: 60px;
+  position: relative;
+  margin: auto;
+}
+
+.confirmation,
+.recapitulatif {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-cart {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.cart,
+.paiement {
+  /* border: 2px solid blueviolet; */
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 50%;
+  /* background-color: white; */
+}
+
+.paiement form {
+  display: flex;
+  justify-content: space-around;
+  /* margin: 60px; */
+}
+
+.form-infos,
+.form-address {
+  display: flex;
+  border: none;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px;
+  width: 40%;
+}
+
+.paiement #submit {
+  margin: auto;
+}
+
+.paiement-title {
+  border-bottom: 2px solid blueviolet;
+}
+
+.cart-infos {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid blueviolet;
+}
+
+.cart-article {
+  display: grid;
+  grid-template-columns: repeat(7, 20%);
+  height: 100px;
+  width: 100%;
+  align-items: baseline;
+  border-bottom: 2px solid blueviolet;
+}
+
+.cart-article-img {
+  grid-column: 1/span 1;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cart-article-title {
+  grid-column: 2/span 1;
+}
+
+.cart-article-price {
+  grid-column: 3/span 1;
+}
+
+.cart-article-varnish {
+  grid-column: 4/span 1;
+}
+
+.cart-article-total {
+  grid-column: 5/span 1;
+}
+
+.btn-remove {
+  grid-column: 6/span 1;
+}
+
+.cart-article-title,
+.cart-article-price,
+.cart-article-varnish,
+.cart-infos-total {
+  margin: auto;
+  font-size: 20px;
+}
+
+.btn-remove {
+  height: 30px;
+  width: 30px;
+  margin: auto;
+}
+
+.cart-article-quantity {
+  height: 20px;
+  width: 40px;
+  margin: auto;
+}
+
+/*# sourceMappingURL=main.css.map */

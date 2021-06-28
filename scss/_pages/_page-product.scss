@@ -1,0 +1,52 @@
+.product {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.product .article {
+	position: relative;
+
+	padding: 1vw;
+	/* max-width: 23vw;  calc */
+	/* height: calc */
+	height: 85%;
+	margin-bottom: 60px;
+	max-width: 23vw;
+	position: relative;
+	top: 60px;
+	display: flex;
+	flex-direction: column;
+}
+.product .varnishChoice {
+	display: flex;
+	justify-content: space-between;
+}
+
+.product .article-img-container img {
+	max-height: calc(100vh - 125px);
+	position: fixed;
+	/* z-index: -20px; */
+	left: 0;
+	top: 62px;
+}
+
+.product .article .btn-add {
+	margin: auto;
+	position: absolute;
+	bottom: 1vw;
+	left: 50%;
+}
+
+button.btn-add {
+	border: none;
+	background-color: transparent;
+	border: 3px solid blueviolet;
+	font-weight: 500;
+	color: blueviolet;
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	padding: 10px;
+	cursor: pointer;
+}

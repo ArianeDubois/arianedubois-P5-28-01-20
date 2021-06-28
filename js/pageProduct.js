@@ -52,10 +52,6 @@ function clicAddToCard(product) {
 	let addButton = document.querySelector('.btn-add');
 	// recuperation du panier dans le local storage
 
-	//[{1 qty :3}{2, qty :10}]
-
-	//.length
-
 	//classe notification
 	addButton.addEventListener('click', () => {
 		let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
