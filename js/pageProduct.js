@@ -48,9 +48,21 @@ function selectVarnish(product) {
 
 	return product.varnishSelect;
 }
+
 function clicAddToCard(product) {
 	let addButton = document.querySelector('.btn-add');
 	// recuperation du panier dans le local storage
+
+	// let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
+	// let cartIcone = document.querySelector('.header-cart');
+
+	// let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
+	// cart.forEach((element) => {
+	// 	quantityInCart += element.quantity;
+	// });
+
+	// cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${quantityInCart}</div>`; //recupère quantitée dans le panier et ajoute le dernier
+	// //add to cart
 
 	//classe notification
 	addButton.addEventListener('click', () => {
@@ -80,5 +92,3 @@ function clicAddToCard(product) {
 		// envoie au local storage les nouvelle valeur
 	});
 }
-
-//add to cart

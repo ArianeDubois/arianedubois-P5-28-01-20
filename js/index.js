@@ -20,8 +20,16 @@ function displayFurniture({ name, imageUrl: img, price, _id: id }) {
             <p class="article-price">${price} €</p>
         </a>
     </article>`;
-}
 
-// for (let i = 0; i < 20; i++) {
-// 	document.querySelector('.background').innerHTML += `<div class="border" id='${i}'></div>`;
-// }
+	//compteur cart
+	let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
+	let cartIcone = document.querySelector('.header-cart');
+
+	let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
+	cart.forEach((element) => {
+		quantityInCart += element.quantity;
+	});
+
+	cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${quantityInCart}</div>`; //recupère quantitée dans le panier et ajoute le dernier
+	//add to cart
+}

@@ -4,8 +4,7 @@
 	height: 100vh;
 	justify-content: space-around;
 }
-.cart,
-.paiement {
+.cart {
 	/* border: 2px solid blueviolet; */
 	display: flex;
 	flex-direction: column;
@@ -14,56 +13,45 @@
 	/* background-color: white; */
 }
 
-.paiement form {
-	display: flex;
-	justify-content: space-around;
-	/* margin: 60px; */
-}
-
-.form-infos,
-.form-address {
-	display: flex;
-	border: none;
-	flex-direction: column;
-	justify-content: space-around;
-	margin: 20px;
-	width: 40%;
-}
-.paiement #submit {
-	margin: auto;
-}
-
-.paiement-title {
-	border-bottom: 2px solid blueviolet;
-}
-
 .cart-infos {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(6, 16.6%);
+	text-align: center;
 	justify-content: space-around;
 	border-bottom: 2px solid blueviolet;
 }
 
+//grid
+
+// .cart-content-add {
+// 	height: 100%;
+// }
 .cart-article {
 	display: grid;
-	grid-template-columns: repeat(7, 20%);
+	grid-template-columns: repeat(6, 16.6%);
 	height: 100px;
 	width: 100%;
 	align-items: baseline;
+	text-align: center;
 	border-bottom: 2px solid blueviolet;
 }
 .cart-article-img {
 	grid-column: 1 / span 1;
-	max-width: 100%;
-	max-height: 100%;
+	width: 100%;
+	max-height: 100px; //vw
+	object-fit: cover;
 }
 
-.cart-article-title {
+.cart-article-title,
+.cart-subtitle-article {
 	grid-column: 2 / span 1;
 }
-.cart-article-price {
+.cart-article-price,
+.cart-subtitle-price {
 	grid-column: 3 / span 1;
 }
-.cart-article-varnish {
+.cart-article-varnish,
+.cart-subtitle-varnish {
 	grid-column: 4 / span 1;
 }
 .cart-article-total {
@@ -81,13 +69,59 @@
 	font-size: 20px;
 }
 
+.cart-article-quantity {
+	height: 20px;
+	width: 40px;
+	margin: auto;
+}
 .btn-remove {
 	height: 30px;
 	width: 30px;
 	margin: auto;
 }
-.cart-article-quantity {
-	height: 20px;
-	width: 40px;
+
+.cart-section-total {
+	display: flex;
+	justify-content: space-between;
+}
+
+//formulaire
+
+.paiement {
+	flex-direction: column;
+	align-self: center;
+	width: 50%;
+	/* margin: 60px; */
+}
+
+.paiement form {
+	display: flex;
+	justify-content: space-around;
+}
+
+.form-infos,
+.form-address {
+	display: flex;
+	border: none;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 20px;
+	width: 40%;
+}
+
+.paiement-title {
+	border-bottom: 2px solid blueviolet;
+}
+
+#submit {
+	display: flex;
+	justify-self: center;
+	border: none;
+	color: blueviolet;
+	cursor: pointer;
+	// font-family: Helvetica, sans-serif;
+	background-color: transparent;
+	border: 2px solid blueviolet;
+	padding: 2px;
 	margin: auto;
 }
