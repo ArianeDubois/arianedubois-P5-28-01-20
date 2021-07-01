@@ -105,7 +105,10 @@ function clicAddToCard(product) {
 
 		cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${
 			quantityInCart + 1
-		}</div>`; //recupère quantitée dans le panier et ajoute le dernier
+		}</div>`;
+
+		console.log(document.querySelector('.checkout'));
+		//recupère quantitée dans le panier et ajoute le dernier
 		cart = localStorage.setItem('cart', JSON.stringify(cart));
 
 		// envoie au local storage les nouvelle valeur

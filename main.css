@@ -297,6 +297,7 @@ a.button {
 .add-to-cart-notif .checkout {
   padding: 8px;
   margin: auto;
+  position: sticky;
   text-transform: uppercase;
   border: 3px solid #a406ff;
 }

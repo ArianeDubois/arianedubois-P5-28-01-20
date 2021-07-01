@@ -1,5 +1,5 @@
 //check validity
-//boucle sur les  input > recupère le dernier enfant ?
+let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
 
 document.querySelectorAll('.form-input').forEach((input, index) => {
 	input.addEventListener('change', (e) => {
@@ -12,24 +12,6 @@ document.querySelectorAll('.form-input').forEach((input, index) => {
 		}
 	});
 });
-
-let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
-
-// document.getElementById('addressMail').addEventListener('change', (e) => {
-// 	if (document.getElementById('addressMail').checkValidity() == false) {
-// 		document.getElementById('mail-invalide-message').innerText = 'email incorect';
-// 	} else {
-// 		document.getElementById('mail-invalide-message').innerText = '';
-// 	}
-// });
-
-// document.getElementById('number').addEventListener('change', (e) => {
-// 	if (document.getElementById('number').checkValidity() == false) {
-// 		document.getElementById('postal-invalide-message').innerText = 'code postale incorect';
-// 	} else {
-// 		document.getElementById('postal-invalide-message').innerText = '';
-// 	}
-// });
 
 function sendInfosOrder() {
 	let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
