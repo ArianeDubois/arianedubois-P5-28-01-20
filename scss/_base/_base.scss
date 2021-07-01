@@ -1,18 +1,8 @@
 body {
-	color: blueviolet;
+	color: $main-color;
 	font-family: Helvetica, sans-serif;
 }
 
-a.button {
-	text-decoration: none;
-}
-
-.header {
-	display: flex;
-	justify-content: space-between;
-	width: 100vw;
-	position: fixed;
-}
 * {
 	margin: 0;
 	padding: 0;
@@ -25,31 +15,82 @@ a {
 	color: inherit;
 }
 
+a.button {
+	text-decoration: none;
+	&:hover {
+		background-color: $main-color;
+		color: white;
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	width: 100vw;
+	position: fixed;
+}
 .header-cart {
 	position: relative;
-	font-size: 35px;
-	margin: 1vw;
+	font-size: $font-title;
+	margin: $margin-item 2vw;
 	display: flex;
 }
 
 .cart-number {
-	font-size: 20px;
+	font-size: $font-courant;
 	align-self: center;
+	color: white;
+	position: absolute;
+	top: 15%;
+	left: 39%;
 }
 
-/* il faut regarder le compte avec la quantity */
 .header-cart-notification {
-	color: rgb(168, 205, 230);
+	animation: grow 0.5s ease-in-out;
+}
+
+@keyframes grow {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 .header-title {
-	margin: 1vw;
+	margin: $margin-item;
 }
 
 .header-border {
-	border-bottom: 3px solid blueviolet;
+	border-bottom: 3px solid $main-color;
 	width: 100%;
-	top: 60px;
+	top: $white-margin-top;
 	position: fixed;
 	z-index: -10;
+}
+
+.footer {
+	&-contact,
+	&-about {
+		margin: 0 $margin-item 0 $margin-item;
+	}
+}
+
+$medium: 920px;
+$small: 650px;
+
+@mixin medium-screen {
+	@media (max-width: $medium) {
+		@content;
+	}
+}
+
+@mixin small-screen {
+	@media (max-width: $small) {
+		@content;
+	}
 }

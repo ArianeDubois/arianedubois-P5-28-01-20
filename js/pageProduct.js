@@ -15,13 +15,14 @@ fetch(`http://localhost:3000/api/furniture/${idProduct()}`) //récupère le prod
 
 function displayProduct({ name, imageUrl: img, price, description, varnish }) {
 	document.querySelector('.product').innerHTML += `<article class="article">
-		<h2 class="article-title">${name}</h2>
-		<div class="article-img-container">
-			<img src=" ${img} " id="article-img" class="article-img">
+		<h2 class="product-title">${name}</h2>
+		<div class="product-img-container">
+			<img src=" ${img} " id="product-img" class="product-img">
 		</div>
-		<p class="article-text">${description}</p>
-		<p class="article-price">${price}€</p> 
+		<p class="product-text">${description}</p>
 		<div class="varnishChoice"></div>
+
+		<p class="product-price">${price}€</p> 
 		<button class="btn-add" type="button">Add to card +</button>
 	</article>`;
 
@@ -34,14 +35,19 @@ function displayProduct({ name, imageUrl: img, price, description, varnish }) {
 		<label for="${varnish[i]}">${varnish[i]}</label></div>`;
 		let varnishChoiceContainer = document.querySelector('.varnishChoice');
 		varnishChoiceContainer.innerHTML += varnishContent;
+		document.querySelector('.varnish').checked = true;
 	}
 }
 
 function selectVarnish(product) {
+	let checkedByDefaut = document.querySelector('.varnish').value; //valuer du premier varnish par defaurt
+	let selection = checkedByDefaut; //valeur par defaut
+	product.varnishSelect = selection;
+
 	document.addEventListener('change', (e) => {
 		let isChecked = e.target.checked;
 		if (isChecked == true) {
-			let selection = e.target.value; // prend que le premier mot du varnish
+			selection = e.target.value; //prend que la selection clqiué
 			product.varnishSelect = selection;
 		}
 	});
@@ -53,30 +59,36 @@ function clicAddToCard(product) {
 	let addButton = document.querySelector('.btn-add');
 	// recuperation du panier dans le local storage
 
-	// let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
-	// let cartIcone = document.querySelector('.header-cart');
+	let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
+	let cartIcone = document.querySelector('.header-cart');
 
-	// let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
-	// cart.forEach((element) => {
-	// 	quantityInCart += element.quantity;
-	// });
+	let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
+	cart.forEach((element) => {
+		quantityInCart += element.quantity;
+	});
 
-	// cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${quantityInCart}</div>`; //recupère quantitée dans le panier et ajoute le dernier
-	// //add to cart
+	cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${quantityInCart}</div>`;
 
-	//classe notification
+	document.querySelector('.close').addEventListener('click', function () {
+		document.querySelector('.add-to-cart-notif').classList.remove('slide-in');
+	});
+
+	//classe notifications
 	addButton.addEventListener('click', () => {
-		let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
-		//parcuorir les élements du localStorage
+		cart = JSON.parse(localStorage.getItem('cart')); // initialisation de cart :tablau vide ou storage
+
 		let producExistInCart = false;
 		//compare les valeur du produit selectionné avec les valeurs enregistrées dans le localstorage
+
 		let cartIcone = document.querySelector('.header-cart');
 		cartIcone.classList.add('header-cart-notification');
+		document.querySelector('.add-to-cart-notif').classList.add('slide-in');
 		let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
+
 		cart.forEach((element) => {
 			quantityInCart += element.quantity;
 
-			if (element._id === product._id && selectVarnish(product) === element.varnishSelect) {
+			if (element._id === product._id && product.varnishSelect === element.varnishSelect) {
 				element.quantity++;
 				producExistInCart = true;
 			}
@@ -85,10 +97,18 @@ function clicAddToCard(product) {
 			//false
 			cart.push(product); // si le produit n'est pas dans le panier on push
 		}
+		for (let i = 0; i < cart.length; i++) {
+			document.querySelector(
+				'.add-to-cart-notif-message'
+			).innerHTML = `	<img class="add-to-cart-notif-img" src="${cart[i].imageUrl}">	<p class="add-to-cart-notif-message">Votre ${cart[i].name} avec un vernis ${product.varnishSelect}  à bien été ajoutée au panier</p>
+		`;
+		}
+
 		cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${
 			quantityInCart + 1
 		}</div>`; //recupère quantitée dans le panier et ajoute le dernier
 		cart = localStorage.setItem('cart', JSON.stringify(cart));
+
 		// envoie au local storage les nouvelle valeur
 	});
 }

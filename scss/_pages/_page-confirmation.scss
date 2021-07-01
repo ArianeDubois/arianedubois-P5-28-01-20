@@ -1,8 +1,8 @@
 .confirm-order-main {
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	top: 60px;
+	width: $main-width-cart;
+	top: $white-margin-top;
 	position: relative;
 	margin: auto;
 }
@@ -11,4 +11,21 @@
 	margin: 30px;
 	display: flex;
 	flex-direction: column;
+}
+
+.recapitulatif-order-numero,
+.recapitulatif-order-total,
+.recapitulatif-order-address {
+	margin-bottom: $margin-item;
+}
+
+.confirmation-order,
+.recapitulatif h2 {
+	text-transform: uppercase;
+	border-bottom: 2px solid $main-color;
+	margin-bottom: 3px;
+}
+
+.name {
+	text-transform: capitalize;
 }

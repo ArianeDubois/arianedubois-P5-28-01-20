@@ -12,22 +12,22 @@
 		<title>Product</title>
 	</head>
 
-	<body>
-		<main>
+	<body class="body-product">
+		<main class="main-product">
 			<header class="header">
 				<a class="homePageLink" href="index.html"> <h1 class="header-title">Orinico</h1></a>
-				<a href="cart.html" class="header-cart"><i class="fas fa-shopping-cart"></i></a>
+				<a href="cart.html" class="header-cart"><i class="fa fa-shopping-cart"></i></a>
 			</header>
 			<div class="header-border"></div>
 
 			<div class="product">
-				<!-- <article class="article">
-					<h2 class="article-title">${name}</h2>
-					<div class="article-img-container">
-						<img src=" ${img} " id="article-img" class="article-img">
+				<!-- <aticle class="article">
+					<h2 class="product-title">${name}</h2>
+					<div class="product-img-container">
+						<img src=" ${img} " id="product-img" class="product-img">
 					</div>
-					<p class="article-text">${description}</p>
-					<p class="article-price">${price}€</p> 
+					<p class="product-text">${description}</p>
+					<p class="product-price">${price}€</p> 
 					<div class="varnishChoice">
 
 						
@@ -39,7 +39,17 @@
 					<button class="btn-add" type="button">Add to card +</button>
 				</article> -->
 			</div>
+
+			<div class="add-to-cart-notif">
+				<p class="add-to-cart-notif-message"></p>
+				<div class="close">X</div>
+				<span class="notification-choice">
+					<a href="cart.html" class="checkout">Checkout</a>
+					<a href="index.html" class="checkout">Continue </a></span
+				>
+			</div>
 		</main>
+
 		<div class="footer-border"></div>
 
 		<footer class="footer">

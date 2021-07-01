@@ -1,3 +1,11 @@
+let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
+
+// document.getElementById('addressMail').value.addEventListener('change', (e) => {
+// 	if (!validity) {
+// 		document.getElementById('invalideMessage').innerText = 'email incorect';
+// 	}
+// });
+
 function sendInfosOrder() {
 	let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
 	let products = []; //faire un tableau d'id product
@@ -32,10 +40,11 @@ function sendInfosOrder() {
 				localStorage.setItem('contact', JSON.stringify(resOrder.contact)); //envoie des données contact au local storage
 				window.location.href = `${window.location.origin}/confirmationOrder.html?orderId=${resOrder.orderId}`;
 			});
-	} else if (!validity) {
-		document.getElementById('invalideMessage').innerText =
-			'please fill in the information above';
 	}
+	// else if (!validity) {
+	// 	document.getElementById('invalideMessage').innerText =
+	// 		'please fill in the information above';
+	// }
 }
 
 document.querySelector('#submit').addEventListener('click', function (e) {

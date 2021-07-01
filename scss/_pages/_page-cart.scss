@@ -1,7 +1,7 @@
 .main-cart {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	height: 95vh; //(- footer)
 	justify-content: space-around;
 }
 .cart {
@@ -9,80 +9,84 @@
 	display: flex;
 	flex-direction: column;
 	align-self: center;
-	width: 50%;
-	/* background-color: white; */
-}
+	width: $main-width-cart;
 
-.cart-infos {
-	display: grid;
-	grid-template-columns: repeat(6, 16.6%);
-	text-align: center;
-	justify-content: space-around;
-	border-bottom: 2px solid blueviolet;
-}
+	// margin-top: 10vh;
+	position: relative;
+	top: 5vh;
 
-//grid
+	&-infos {
+		display: grid;
+		grid-template-columns: repeat(6, 16.6%);
+		text-align: center;
+		justify-content: space-around;
+		border-bottom: 2px solid $main-color;
+	}
 
-// .cart-content-add {
-// 	height: 100%;
-// }
-.cart-article {
-	display: grid;
-	grid-template-columns: repeat(6, 16.6%);
-	height: 100px;
-	width: 100%;
-	align-items: baseline;
-	text-align: center;
-	border-bottom: 2px solid blueviolet;
-}
-.cart-article-img {
-	grid-column: 1 / span 1;
-	width: 100%;
-	max-height: 100px; //vw
-	object-fit: cover;
-}
+	//contenu dynamique
+	&-content-add {
+		max-height: 40vh;
+		overflow: auto;
+		.cart-article {
+			display: grid;
+			grid-template-columns: repeat(6, 16.6%);
+			height: 100px;
+			width: 100%;
+			align-items: baseline;
+			text-align: center;
+			border-bottom: 2px solid $main-color;
+			background-color: white;
+		}
+		.cart-article-img {
+			grid-column: 1 / span 1;
+			width: 100%;
+			max-height: 100px; //vw
+			object-fit: cover;
+		}
 
-.cart-article-title,
-.cart-subtitle-article {
-	grid-column: 2 / span 1;
-}
-.cart-article-price,
-.cart-subtitle-price {
-	grid-column: 3 / span 1;
-}
-.cart-article-varnish,
-.cart-subtitle-varnish {
-	grid-column: 4 / span 1;
-}
-.cart-article-total {
-	grid-column: 5 / span 1;
-}
-.btn-remove {
-	grid-column: 6 / span 1;
-}
+		.cart-article-title,
+		.cart-subtitle-article {
+			grid-column: 2 / span 1;
+		}
+		.cart-article-price,
+		.cart-subtitle-price {
+			grid-column: 3 / span 1;
+		}
+		.cart-article-varnish,
+		.cart-subtitle-varnish {
+			grid-column: 4 / span 1;
+		}
+		.cart-article-total {
+			grid-column: 5 / span 1;
+		}
+		.btn-remove {
+			grid-column: 6 / span 1;
+		}
 
-.cart-article-title,
-.cart-article-price,
-.cart-article-varnish,
-.cart-infos-total {
-	margin: auto;
-	font-size: 20px;
-}
+		.cart-article-title,
+		.cart-article-price,
+		.cart-article-varnish,
+		.cart-infos-total {
+			margin: auto;
+			font-size: 20px;
+		}
 
-.cart-article-quantity {
-	height: 20px;
-	width: 40px;
-	margin: auto;
-}
-.btn-remove {
-	height: 30px;
-	width: 30px;
-	margin: auto;
-}
+		.cart-article-quantity {
+			height: 20px;
+			width: 40px;
+			margin: auto;
+		}
+		.btn-remove {
+			height: 30px;
+			width: 30px;
+			margin: auto;
+		}
+	}
 
-.cart-section-total {
-	display: flex;
-	justify-content: space-between;
+	&-section-total {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 //formulaire
@@ -90,38 +94,39 @@
 .paiement {
 	flex-direction: column;
 	align-self: center;
-	width: 50%;
+	width: $main-width-cart;
+	background-color: white;
+
+	&-title {
+		border-bottom: 2px solid $main-color;
+	}
+
+	form {
+		display: flex;
+		justify-content: space-around;
+
+		.form-infos,
+		.form-address {
+			display: flex;
+			border: none;
+			flex-direction: column;
+			justify-content: space-around;
+			margin: 20px;
+			width: 40%;
+		}
+	}
+	#submit {
+		display: flex;
+		justify-self: center;
+		border: none;
+		color: $main-color;
+		cursor: pointer;
+		// font-family: Helvetica, sans-serif;
+		font-size: $font-subtitle;
+		background-color: transparent;
+		border: 2px solid $main-color;
+		padding: 2px;
+		margin: auto;
+	}
 	/* margin: 60px; */
-}
-
-.paiement form {
-	display: flex;
-	justify-content: space-around;
-}
-
-.form-infos,
-.form-address {
-	display: flex;
-	border: none;
-	flex-direction: column;
-	justify-content: space-around;
-	margin: 20px;
-	width: 40%;
-}
-
-.paiement-title {
-	border-bottom: 2px solid blueviolet;
-}
-
-#submit {
-	display: flex;
-	justify-self: center;
-	border: none;
-	color: blueviolet;
-	cursor: pointer;
-	// font-family: Helvetica, sans-serif;
-	background-color: transparent;
-	border: 2px solid blueviolet;
-	padding: 2px;
-	margin: auto;
 }

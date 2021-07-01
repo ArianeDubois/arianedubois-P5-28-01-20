@@ -5,7 +5,7 @@
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	max-width: 70%;
+	max-width: $main-width-index;
 	margin: auto;
 }
 
@@ -16,9 +16,14 @@
 	width: 500px;
 	height: 400px;
 	margin-bottom: 80px;
-	border: 3px solid blueviolet;
-	border-radius: 2em;
+	border: 3px solid $main-color;
+	// border-radius: 2em;
 	background-color: white;
+	transition: transform 0.2s ease-in-out;
+
+	&:hover {
+		transform: scale(1.07);
+	}
 }
 .article-title,
 .article-price {
@@ -38,11 +43,10 @@
 .article-img {
 	height: 100%;
 	width: auto;
-	border-radius: 0 2em 2em 0;
 }
 
 .footer-border {
-	border-top: 3px solid blueviolet;
+	border-top: 3px solid $main-color;
 	width: 100%;
 	bottom: 60px;
 	position: fixed;
