@@ -28,6 +28,7 @@
 			left: 0;
 			bottom: $white-margin-top;
 			border-radius: 0 2em 2em 0;
+
 			@include medium-screen {
 				position: inherit;
 			}
@@ -58,10 +59,26 @@
 			margin: $margin-item;
 			font-size: $font-subtitle;
 
-			// :focus {
-			// 	background-color: yellowgreen;
-			// 	border: 3px solid $main-color;
-			// }
+			:checked,
+			[type='radio']:not(:checked) {
+				display: none;
+			}
+			[type='radio']:not(:checked) {
+				&:hover + label {
+					background-color: $main-color;
+					color: white;
+				}
+			}
+
+			:checked + label {
+				background-color: $main-color;
+				color: white;
+			}
+		}
+
+		label {
+			border: 3px solid $main-color;
+			padding: 4px;
 		}
 
 		.btn-add {
@@ -143,7 +160,7 @@
 		margin-bottom: 4vh;
 	}
 	.checkout {
-		padding: 4px;
+		padding: 8px;
 		margin: auto;
 
 		text-transform: uppercase;

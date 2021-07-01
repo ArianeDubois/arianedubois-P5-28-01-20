@@ -23,9 +23,26 @@
 		border-bottom: 2px solid $main-color;
 	}
 
+	&-subtitle-article {
+		grid-column-start: 2;
+	}
+
+	&-section-total {
+		font-size: $font-subtitle;
+		padding: 8px;
+		position: relative;
+
+		margin-top: 10px;
+		.cart-infos-total {
+			position: absolute;
+			right: 0;
+			margin: auto;
+			border-bottom: 2px solid $main-color;
+		}
+	}
 	//contenu dynamique
 	&-content-add {
-		max-height: 40vh;
+		max-height: 37vh;
 		overflow: auto;
 		.cart-article {
 			display: grid;
@@ -75,11 +92,33 @@
 			height: 20px;
 			width: 40px;
 			margin: auto;
+			background: transparent;
+			border: 2px solid $main-color;
+			color: $main-color;
+
+			&:active,
+			&:focus {
+				outline: none;
+				background: $main-color;
+				color: white;
+			}
 		}
+
 		.btn-remove {
 			height: 30px;
 			width: 30px;
 			margin: auto;
+			color: $main-color;
+			outline: none;
+			background: transparent;
+			border: 2px solid $main-color;
+
+			&:hover,
+			&:active {
+				outline: none;
+				background: $main-color;
+				color: white;
+			}
 		}
 	}
 
@@ -89,6 +128,17 @@
 	}
 }
 
+// button, button:focus{
+// 	outline: none;
+// 	background: transparent;
+// 	border: 1px solid transparent;
+//   }
+
+button:active {
+	outline: none;
+	background: transparent;
+	border: 1px solid grey;
+}
 //formulaire
 
 .paiement {
@@ -104,6 +154,7 @@
 	form {
 		display: flex;
 		justify-content: space-around;
+		position: relative;
 
 		.form-infos,
 		.form-address {
@@ -113,6 +164,29 @@
 			justify-content: space-around;
 			margin: 20px;
 			width: 40%;
+			label {
+				margin: 8px 0 4px 0;
+				text-transform: capitalize;
+			}
+			input,
+			input:focus {
+				background: transparent;
+				border: 2px solid $main-color;
+				padding: 8px;
+
+				&:active,
+				&:focus {
+					outline: none;
+					background: $main-color;
+					color: white;
+				}
+			}
+		}
+
+		#invalideMessage {
+			position: absolute;
+			bottom: -120px;
+			width: 200px;
 		}
 	}
 	#submit {
@@ -125,8 +199,13 @@
 		font-size: $font-subtitle;
 		background-color: transparent;
 		border: 2px solid $main-color;
-		padding: 2px;
-		margin: auto;
+		padding: 8px;
+		margin: $margin-item auto;
+		text-transform: uppercase;
+		&:hover {
+			background-color: $main-color;
+			color: white;
+		}
 	}
 	/* margin: 60px; */
 }

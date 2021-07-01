@@ -13,11 +13,12 @@ function displayFurniture({ name, imageUrl: img, price, _id: id }) {
     <article class="article">
         <a class="article-page" href="product.html?id=${id}">
             <h2 class="article-title">${name}</h2>
+			<p class="article-price">${price} €</p>
             <div class="article-img-container">
                 <img src="${img}" class="article-img"/>
 
             </div>
-            <p class="article-price">${price} €</p>
+           
         </a>
     </article>`;
 

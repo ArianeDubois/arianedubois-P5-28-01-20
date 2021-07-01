@@ -9,7 +9,7 @@ console.log(resumeOrder);
 // //message confirmation
 document.querySelector(
 	'.confirmation-order-message'
-).innerHTML = `Thank you <span class="name"> ${resumeOrder.contact.firstName}! </span>, your order n°${resumeOrder.orderId} is being prepared for shipment. We have sent you a confirmation email to this address ${resumeOrder.contact.email}`; //change camel Case en css,
+).innerHTML = `Thank you <span class="name"> ${resumeOrder.contact.firstName}! </span> Your order n°${resumeOrder.orderId} is being prepared for shipment. We have sent you a confirmation email to this address ${resumeOrder.contact.email}`; //change camel Case en css,
 //revoir la longueur du numero de commande
 
 //message récapitulatif

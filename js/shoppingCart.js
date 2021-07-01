@@ -19,7 +19,7 @@ function displayArticleToCart({ name, imageUrl: img, price, _id: id, quantity, v
 	<div class="cart-article" >
     <img src=" ${img}" class="cart-article-img">
     <p class="cart-article-title"> ${name}</p>
-    <p class="cart-article-price">${price}</p> 
+    <p class="cart-article-price">${price}€</p> 
     <p class="cart-article-varnish">${varnishSelect}</p> 
     <input id="${id}" class="cart-article-quantity"  type="number" value="${quantity}"  min="1" max="10">
     <button class="btn-remove" type="button">X</button></div>
@@ -41,7 +41,7 @@ document.querySelectorAll('.btn-remove').forEach((crossButton, index) => {
 function displayTotalPrice(article, index) {
 	totalPriceArticle = articleQty * article.price;
 	totalPriceCart += totalPriceArticle;
-	totalPriceDisplay.textContent = `Total:${totalPriceCart} €`;
+	totalPriceDisplay.textContent = `Total: ${totalPriceCart}€`;
 	localStorage.setItem('totalPriceCart', JSON.stringify(totalPriceCart));
 }
 

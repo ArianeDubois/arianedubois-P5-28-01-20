@@ -18,10 +18,6 @@ a {
 a.button {
   text-decoration: none;
 }
-a.button:hover {
-  background-color: #a406ff;
-  color: white;
-}
 
 .header {
   display: flex;
@@ -42,8 +38,10 @@ a.button:hover {
   align-self: center;
   color: white;
   position: absolute;
+  text-align: center;
+  width: 100%;
   top: 15%;
-  left: 39%;
+  left: 9%;
 }
 
 .header-cart-notification {
@@ -90,14 +88,18 @@ a.button:hover {
 
 .article-page {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  border-radius: 4em 4em 0em 0;
+  background-color: white;
   width: 500px;
-  height: 400px;
+  height: 350px;
   margin-bottom: 80px;
   border: 3px solid #a406ff;
-  background-color: white;
   transition: transform 0.2s ease-in-out;
+  object-fit: cover;
+  overflow: hidden;
 }
 .article-page:hover {
   transform: scale(1.07);
@@ -107,6 +109,7 @@ a.button:hover {
 .article-price {
   display: flex;
   justify-content: center;
+  padding: 1vw 2vw 0 2vw;
 }
 
 .article-price {
@@ -114,14 +117,17 @@ a.button:hover {
 }
 
 .article-img-container {
-  max-height: 70%;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .article-img {
-  height: 100%;
-  width: auto;
+  margin-top: 1vw;
+  border-top: 3px solid #a406ff;
+  height: auto;
+  width: 100%;
+  bottom: 500px;
 }
 
 .footer-border {
@@ -199,6 +205,22 @@ a.button:hover {
   margin: 1vw;
   font-size: 20px;
 }
+.product .article .varnishChoice :checked,
+.product .article .varnishChoice [type=radio]:not(:checked) {
+  display: none;
+}
+.product .article .varnishChoice [type=radio]:not(:checked):hover + label {
+  background-color: #a406ff;
+  color: white;
+}
+.product .article .varnishChoice :checked + label {
+  background-color: #a406ff;
+  color: white;
+}
+.product .article label {
+  border: 3px solid #a406ff;
+  padding: 4px;
+}
 .product .article .btn-add {
   margin-top: 2vh;
   align-self: center;
@@ -273,7 +295,7 @@ a.button:hover {
   margin-bottom: 4vh;
 }
 .add-to-cart-notif .checkout {
-  padding: 4px;
+  padding: 8px;
   margin: auto;
   text-transform: uppercase;
   border: 3px solid #a406ff;
@@ -339,8 +361,23 @@ a.button:hover {
   justify-content: space-around;
   border-bottom: 2px solid #a406ff;
 }
+.cart-subtitle-article {
+  grid-column-start: 2;
+}
+.cart-section-total {
+  font-size: 20px;
+  padding: 8px;
+  position: relative;
+  margin-top: 10px;
+}
+.cart-section-total .cart-infos-total {
+  position: absolute;
+  right: 0;
+  margin: auto;
+  border-bottom: 2px solid #a406ff;
+}
 .cart-content-add {
-  max-height: 40vh;
+  max-height: 37vh;
   overflow: auto;
 }
 .cart-content-add .cart-article {
@@ -388,15 +425,38 @@ a.button:hover {
   height: 20px;
   width: 40px;
   margin: auto;
+  background: transparent;
+  border: 2px solid #a406ff;
+  color: #a406ff;
+}
+.cart-content-add .cart-article-quantity:active, .cart-content-add .cart-article-quantity:focus {
+  outline: none;
+  background: #a406ff;
+  color: white;
 }
 .cart-content-add .btn-remove {
   height: 30px;
   width: 30px;
   margin: auto;
+  color: #a406ff;
+  outline: none;
+  background: transparent;
+  border: 2px solid #a406ff;
+}
+.cart-content-add .btn-remove:hover, .cart-content-add .btn-remove:active {
+  outline: none;
+  background: #a406ff;
+  color: white;
 }
 .cart-section-total {
   display: flex;
   justify-content: space-between;
+}
+
+button:active {
+  outline: none;
+  background: transparent;
+  border: 1px solid grey;
 }
 
 .paiement {
@@ -412,6 +472,7 @@ a.button:hover {
 .paiement form {
   display: flex;
   justify-content: space-around;
+  position: relative;
 }
 .paiement form .form-infos,
 .paiement form .form-address {
@@ -422,6 +483,35 @@ a.button:hover {
   margin: 20px;
   width: 40%;
 }
+.paiement form .form-infos label,
+.paiement form .form-address label {
+  margin: 8px 0 4px 0;
+  text-transform: capitalize;
+}
+.paiement form .form-infos input,
+.paiement form .form-infos input:focus,
+.paiement form .form-address input,
+.paiement form .form-address input:focus {
+  background: transparent;
+  border: 2px solid #a406ff;
+  padding: 8px;
+}
+.paiement form .form-infos input:active, .paiement form .form-infos input:focus,
+.paiement form .form-infos input:focus:active,
+.paiement form .form-infos input:focus:focus,
+.paiement form .form-address input:active,
+.paiement form .form-address input:focus,
+.paiement form .form-address input:focus:active,
+.paiement form .form-address input:focus:focus {
+  outline: none;
+  background: #a406ff;
+  color: white;
+}
+.paiement form #invalideMessage {
+  position: absolute;
+  bottom: -120px;
+  width: 200px;
+}
 .paiement #submit {
   display: flex;
   justify-self: center;
@@ -431,8 +521,13 @@ a.button:hover {
   font-size: 20px;
   background-color: transparent;
   border: 2px solid #a406ff;
-  padding: 2px;
-  margin: auto;
+  padding: 8px;
+  margin: 1vw auto;
+  text-transform: uppercase;
+}
+.paiement #submit:hover {
+  background-color: #a406ff;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

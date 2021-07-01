@@ -23,7 +23,7 @@ function displayProduct({ name, imageUrl: img, price, description, varnish }) {
 		<div class="varnishChoice"></div>
 
 		<p class="product-price">${price}€</p> 
-		<button class="btn-add" type="button">Add to card +</button>
+		<button class="btn-add" type="button">Add to cart +</button>
 	</article>`;
 
 	// document.querySelector('.title').innerHTML += `<a class="homePageLink" href="../FRONT/index.html
@@ -31,7 +31,7 @@ function displayProduct({ name, imageUrl: img, price, description, varnish }) {
 
 	// Display varnishs choices
 	for (let i = 0; i < varnish.length; i++) {
-		let varnishContent = `<div><input type="radio" class="varnish" id="${varnish[i]}" name="varnish" value="${varnish[i]}">
+		let varnishContent = `<div><input type="radio" class="varnish" id="${varnish[i]}" name="varnish" value="${varnish[i]}" >
 		<label for="${varnish[i]}">${varnish[i]}</label></div>`;
 		let varnishChoiceContainer = document.querySelector('.varnishChoice');
 		varnishChoiceContainer.innerHTML += varnishContent;
@@ -75,8 +75,7 @@ function clicAddToCard(product) {
 
 	//classe notifications
 	addButton.addEventListener('click', () => {
-		cart = JSON.parse(localStorage.getItem('cart')); // initialisation de cart :tablau vide ou storage
-
+		cart = JSON.parse(localStorage.getItem('cart')) || [];
 		let producExistInCart = false;
 		//compare les valeur du produit selectionné avec les valeurs enregistrées dans le localstorage
 

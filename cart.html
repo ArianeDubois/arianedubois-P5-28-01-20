@@ -38,8 +38,7 @@
 					</div> -->
 				</div>
 				<div class="cart-section-total">
-					<a class="homepage-link" href="index.html">Continue my shopping</a>
-					<p><strong class="cart-infos-total"></strong></p>
+					<strong class="cart-infos-total"></strong>
 				</div>
 			</section>
 
@@ -50,35 +49,64 @@
 				<form method="POST" action="">
 					<fieldset class="form-infos">
 						<label for="firstName">first name</label>
-						<input type="text" name="firstName" id="firstName" required />
+						<input
+							type="text"
+							class="form-input"
+							name="firstName"
+							id="firstName"
+							pattern="[A-Za-z ]{1,32}"
+							required
+						/>
+						<div class="invalide-message-input" id="name-invalide-message"></div>
 
 						<label for="lastName">last name</label>
-						<input type="text" name="lastName" id="lastName" required />
+						<input
+							type="text"
+							class="form-input"
+							name="lastName"
+							id="lastName"
+							pattern="[A-Za-z ]{1,32}"
+							required
+						/>
+						<div class="invalide-message-input" id="last-name-invalide-message"></div>
 
 						<label for="addressMail">email</label>
 						<input
 							type="email"
+							class="form-input"
 							name="addressMail"
 							id="addressMail"
 							pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
 							required
 						/>
+						<div class="invalide-message-input" id="mail-invalide-message"></div>
 					</fieldset>
 
 					<fieldset class="form-address">
 						<label for="residentialAddress">residential address</label>
 						<input
 							type="textearea"
+							class="form-input"
 							name="residentialAddress"
 							id="residentialAddress"
 							required
 						/>
+						<div class="invalide-message-input" id="address-invalide-message"></div>
 
 						<label for="city">city</label>
-						<input type="city" name="city" id="city" required />
+						<input type="city" class="form-input" name="city" id="city" required />
+						<div class="invalide-message-input" id="city-invalide-message"></div>
 
-						<label for="number">poastal code</label>
-						<input type="text" name="number" id="number" pattern="[0-9]{5}" required />
+						<label for="number">postal code</label>
+						<input
+							type="text"
+							class="form-input"
+							name="number"
+							id="number"
+							pattern="[0-9]{5}"
+							required
+						/>
+						<div class="invalide-message-input" id="postal-invalide-message"></div>
 					</fieldset>
 
 					<div id="invalideMessage"></div>

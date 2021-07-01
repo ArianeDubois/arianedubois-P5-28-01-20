@@ -1,8 +1,33 @@
+//check validity
+//boucle sur les  input > recupère le dernier enfant ?
+
+document.querySelectorAll('.form-input').forEach((input, index) => {
+	input.addEventListener('change', (e) => {
+		if (input.checkValidity() == false) {
+			let incorectMessage = document.querySelectorAll('.invalide-message-input')[index];
+
+			incorectMessage.innerText = 'champ incorect';
+		} else {
+			document.querySelectorAll('.invalide-message-input')[index].innerText = '';
+		}
+	});
+});
+
 let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
 
-// document.getElementById('addressMail').value.addEventListener('change', (e) => {
-// 	if (!validity) {
-// 		document.getElementById('invalideMessage').innerText = 'email incorect';
+// document.getElementById('addressMail').addEventListener('change', (e) => {
+// 	if (document.getElementById('addressMail').checkValidity() == false) {
+// 		document.getElementById('mail-invalide-message').innerText = 'email incorect';
+// 	} else {
+// 		document.getElementById('mail-invalide-message').innerText = '';
+// 	}
+// });
+
+// document.getElementById('number').addEventListener('change', (e) => {
+// 	if (document.getElementById('number').checkValidity() == false) {
+// 		document.getElementById('postal-invalide-message').innerText = 'code postale incorect';
+// 	} else {
+// 		document.getElementById('postal-invalide-message').innerText = '';
 // 	}
 // });
 
@@ -15,7 +40,7 @@ function sendInfosOrder() {
 		}
 	});
 
-	if (validity) {
+	if (validity && cart.length > 0) {
 		let contact = {
 			firstName: document.getElementById('firstName').value,
 			lastName: document.getElementById('lastName').value,
@@ -40,11 +65,10 @@ function sendInfosOrder() {
 				localStorage.setItem('contact', JSON.stringify(resOrder.contact)); //envoie des données contact au local storage
 				window.location.href = `${window.location.origin}/confirmationOrder.html?orderId=${resOrder.orderId}`;
 			});
+	} else if (!validity || cart.length < 1) {
+		document.getElementById('invalideMessage').innerText =
+			'Please fill in this information or add products to your cart';
 	}
-	// else if (!validity) {
-	// 	document.getElementById('invalideMessage').innerText =
-	// 		'please fill in the information above';
-	// }
 }
 
 document.querySelector('#submit').addEventListener('click', function (e) {

@@ -17,10 +17,6 @@ a {
 
 a.button {
 	text-decoration: none;
-	&:hover {
-		background-color: $main-color;
-		color: white;
-	}
 }
 
 .header {
@@ -41,8 +37,10 @@ a.button {
 	align-self: center;
 	color: white;
 	position: absolute;
+	text-align: center;
+	width: 100%;
 	top: 15%;
-	left: 39%;
+	left: 9%;
 }
 
 .header-cart-notification {
