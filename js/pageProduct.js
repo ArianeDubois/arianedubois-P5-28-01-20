@@ -2,6 +2,11 @@ function idProduct() {
 	return new URL(window.location.href).searchParams.get('id'); //
 }
 
+let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
+let cartIcone = document.querySelector('.header-cart');
+
+let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
+
 fetch(`http://localhost:3000/api/furniture/${idProduct()}`) //récupère le produit avec son idURL
 	.then((response) => response.json())
 	.then((product) => {
@@ -10,7 +15,9 @@ fetch(`http://localhost:3000/api/furniture/${idProduct()}`) //récupère le prod
 		product.varnishSelect = '';
 		displayProduct(product);
 		selectVarnish(product);
+		displayQuantityInCart();
 		clicAddToCard(product);
+		notificationsAddToCart(product);
 	});
 
 function displayProduct({ name, imageUrl: img, price, description, varnish }) {
@@ -55,38 +62,27 @@ function selectVarnish(product) {
 	return product.varnishSelect;
 }
 
-function clicAddToCard(product) {
-	let addButton = document.querySelector('.btn-add');
-	// recuperation du panier dans le local storage
-
-	let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
-	let cartIcone = document.querySelector('.header-cart');
-
-	let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
+function displayQuantityInCart() {
+	//recupère la quantité globale dan le local storage pour affichage sur l'icone
 	cart.forEach((element) => {
 		quantityInCart += element.quantity;
 	});
 
 	cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${quantityInCart}</div>`;
+}
 
-	document.querySelector('.close').addEventListener('click', function () {
-		document.querySelector('.add-to-cart-notif').classList.remove('slide-in');
-	});
+function clicAddToCard(product) {
+	let addButton = document.querySelector('.btn-add');
 
-	//classe notifications
 	addButton.addEventListener('click', () => {
 		cart = JSON.parse(localStorage.getItem('cart')) || [];
 		let producExistInCart = false;
 		//compare les valeur du produit selectionné avec les valeurs enregistrées dans le localstorage
 
-		let cartIcone = document.querySelector('.header-cart');
-		cartIcone.classList.add('header-cart-notification');
-		document.querySelector('.add-to-cart-notif').classList.add('slide-in');
 		let quantityInCart = 0; //initialise le compteur avant la boucle sur chaque article
 
 		cart.forEach((element) => {
 			quantityInCart += element.quantity;
-
 			if (element._id === product._id && product.varnishSelect === element.varnishSelect) {
 				element.quantity++;
 				producExistInCart = true;
@@ -96,21 +92,34 @@ function clicAddToCard(product) {
 			//false
 			cart.push(product); // si le produit n'est pas dans le panier on push
 		}
+
+		//modifie l'affichage du compteur dans L'ICONE panier => +1
+		cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${
+			quantityInCart + 1
+		}</div>`; //recupère quantitée dans le panier et ajoute le dernier
+
+		cart = localStorage.setItem('cart', JSON.stringify(cart));
+
+		// envoie au local storage les nouvelles valeurs
+	});
+}
+
+function notificationsAddToCart(product) {
+	let addButton = document.querySelector('.btn-add');
+
+	addButton.addEventListener('click', () => {
+		cart = JSON.parse(localStorage.getItem('cart')) || [];
+		cartIcone.classList.add('header-cart-notification'); //mouvement de l'icone lors de l'ajout
+		document.querySelector('.add-to-cart-notif').classList.add('slide-in'); //apparition notification
 		for (let i = 0; i < cart.length; i++) {
 			document.querySelector(
 				'.add-to-cart-notif-message'
 			).innerHTML = `	<img class="add-to-cart-notif-img" src="${cart[i].imageUrl}">	<p class="add-to-cart-notif-message">Votre ${cart[i].name} avec un vernis ${product.varnishSelect}  à bien été ajoutée au panier</p>
-		`;
+	`;
 		}
-
-		cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${
-			quantityInCart + 1
-		}</div>`;
-
-		console.log(document.querySelector('.checkout'));
-		//recupère quantitée dans le panier et ajoute le dernier
-		cart = localStorage.setItem('cart', JSON.stringify(cart));
-
-		// envoie au local storage les nouvelle valeur
+	});
+	//remove slide
+	document.querySelector('.close').addEventListener('click', function () {
+		document.querySelector('.add-to-cart-notif').classList.remove('slide-in');
 	});
 }

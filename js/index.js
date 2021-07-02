@@ -4,6 +4,7 @@ fetch('http://localhost:3000/api/furniture')
 		furniture.forEach((articleItem) => {
 			articleItem.price /= 100;
 			displayFurniture(articleItem); //articleItem= objet
+			displayQtyCart();
 		});
 	});
 
@@ -21,8 +22,9 @@ function displayFurniture({ name, imageUrl: img, price, _id: id }) {
            
         </a>
     </article>`;
+}
 
-	//compteur cart
+function displayQtyCart() {
 	let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
 	let cartIcone = document.querySelector('.header-cart');
 
@@ -32,5 +34,4 @@ function displayFurniture({ name, imageUrl: img, price, _id: id }) {
 	});
 
 	cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${quantityInCart}</div>`; //recupère quantitée dans le panier et ajoute le dernier
-	//add to cart
 }

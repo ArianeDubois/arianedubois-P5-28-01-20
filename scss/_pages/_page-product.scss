@@ -167,6 +167,11 @@
 		text-transform: uppercase;
 		border: 3px solid $main-color;
 	}
+
+	.invalide-message-input {
+		background-color: $main-color;
+		color: white;
+	}
 }
 
 .slide-in {

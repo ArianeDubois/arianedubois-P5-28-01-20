@@ -207,5 +207,10 @@ button:active {
 			color: white;
 		}
 	}
-	/* margin: 60px; */
+	.invalide-message-input {
+		background-color: $main-color;
+		color: white;
+		width: 30%;
+		padding-left: 10px;
+	}
 }

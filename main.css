@@ -301,6 +301,10 @@ a.button {
   text-transform: uppercase;
   border: 3px solid #a406ff;
 }
+.add-to-cart-notif .invalide-message-input {
+  background-color: #a406ff;
+  color: white;
+}
 
 .slide-in {
   transform: translateX(0%);
@@ -465,7 +469,6 @@ button:active {
   align-self: center;
   width: 50vmax;
   background-color: white;
-  /* margin: 60px; */
 }
 .paiement-title {
   border-bottom: 2px solid #a406ff;
@@ -529,6 +532,12 @@ button:active {
 .paiement #submit:hover {
   background-color: #a406ff;
   color: white;
+}
+.paiement .invalide-message-input {
+  background-color: #a406ff;
+  color: white;
+  width: 30%;
+  padding-left: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

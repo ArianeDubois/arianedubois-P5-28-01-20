@@ -1,12 +1,13 @@
 //check validity
 let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
 
+// function checkInput ()// quelles données ? {}
 document.querySelectorAll('.form-input').forEach((input, index) => {
 	input.addEventListener('change', (e) => {
 		if (input.checkValidity() == false) {
 			let incorectMessage = document.querySelectorAll('.invalide-message-input')[index];
 
-			incorectMessage.innerText = 'champ incorect';
+			incorectMessage.innerText = 'Incorrect field';
 		} else {
 			document.querySelectorAll('.invalide-message-input')[index].innerText = '';
 		}
