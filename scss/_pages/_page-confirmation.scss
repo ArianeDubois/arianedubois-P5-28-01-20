@@ -2,13 +2,14 @@
 	display: flex;
 	flex-direction: column;
 	width: $main-width-cart;
-	top: $white-margin-top;
+	top: 120px;
 	position: relative;
 	margin: auto;
 }
 .confirmation,
 .recapitulatif {
-	margin: 30px;
+	margin-bottom: $margin-item;
+
 	display: flex;
 	flex-direction: column;
 }

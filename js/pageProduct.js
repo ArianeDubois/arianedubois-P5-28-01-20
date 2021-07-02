@@ -18,6 +18,9 @@ fetch(`http://localhost:3000/api/furniture/${idProduct()}`) //récupère le prod
 		displayQuantityInCart();
 		clicAddToCard(product);
 		notificationsAddToCart(product);
+	})
+	.catch((err) => {
+		alert('erreur du chargement des données');
 	});
 
 function displayProduct({ name, imageUrl: img, price, description, varnish }) {
@@ -99,7 +102,6 @@ function clicAddToCard(product) {
 		}</div>`; //recupère quantitée dans le panier et ajoute le dernier
 
 		cart = localStorage.setItem('cart', JSON.stringify(cart));
-
 		// envoie au local storage les nouvelles valeurs
 	});
 }
@@ -114,7 +116,7 @@ function notificationsAddToCart(product) {
 		for (let i = 0; i < cart.length; i++) {
 			document.querySelector(
 				'.add-to-cart-notif-message'
-			).innerHTML = `	<img class="add-to-cart-notif-img" src="${cart[i].imageUrl}">	<p class="add-to-cart-notif-message">Votre ${cart[i].name} avec un vernis ${product.varnishSelect}  à bien été ajoutée au panier</p>
+			).innerHTML = `	<img class="add-to-cart-notif-img" src="${cart[i].imageUrl}">	<p class="add-to-cart-notif-message"> The ${cart[i].name} with a varnish ${product.varnishSelect} has been added to your cart</p>
 	`;
 		}
 	});

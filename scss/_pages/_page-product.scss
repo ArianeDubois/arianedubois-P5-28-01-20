@@ -14,6 +14,10 @@
 
 		height: 85%;
 		max-width: 30vw;
+		@include medium-screen {
+			max-width: 60vmax;
+			margin: auto;
+		}
 		position: relative;
 		top: $white-margin-top;
 		display: flex;
@@ -24,13 +28,20 @@
 			height: auto;
 			position: fixed;
 			width: auto;
-			max-height: 80%;
+			height: 45vw;
 			left: 0;
+			top: 63px; //$white-margin-top + 3px border
 			bottom: $white-margin-top;
 			border-radius: 0 2em 2em 0;
 
 			@include medium-screen {
 				position: inherit;
+				border-radius: 2em;
+			}
+			@include small-screen {
+				height: auto;
+				width: 95vw;
+				border-radius: 0 2em 2em 0;
 			}
 		}
 
@@ -57,6 +68,7 @@
 			display: flex;
 			justify-content: space-around;
 			margin: $margin-item;
+
 			font-size: $font-subtitle;
 
 			:checked,
@@ -166,11 +178,6 @@
 
 		text-transform: uppercase;
 		border: 3px solid $main-color;
-	}
-
-	.invalide-message-input {
-		background-color: $main-color;
-		color: white;
 	}
 }
 

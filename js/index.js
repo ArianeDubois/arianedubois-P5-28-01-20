@@ -6,6 +6,9 @@ fetch('http://localhost:3000/api/furniture')
 			displayFurniture(articleItem); //articleItem= objet
 			displayQtyCart();
 		});
+	})
+	.catch((err) => {
+		alert('erreur du chargement des données');
 	});
 
 function displayFurniture({ name, imageUrl: img, price, _id: id }) {

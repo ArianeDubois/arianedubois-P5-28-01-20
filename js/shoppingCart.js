@@ -7,6 +7,7 @@ let totalPriceDisplay = document.querySelector('.cart-infos-total');
 
 cart.forEach((article, index) => {
 	displayArticleToCart(article);
+	removeArticle();
 	changeQuantity(article, index);
 	displayTotalPrice(article, index);
 	// // removeArticle(article, index);
@@ -29,14 +30,17 @@ function displayArticleToCart({ name, imageUrl: img, price, _id: id, quantity, v
 }
 
 //remove Article
-document.querySelectorAll('.btn-remove').forEach((crossButton, index) => {
-	crossButton.addEventListener('click', (e) => {
-		cart.splice(index, 1);
-		e.target.parentElement.remove();
-		localStorage.setItem('cart', JSON.stringify(cart)); //envoie les nouveaux compte du panier a local storage
-		window.location.reload(); //rafraichir la page pour renvoyer les nouvelles données panier
+
+function removeArticle() {
+	document.querySelectorAll('.btn-remove').forEach((crossButton, index) => {
+		crossButton.addEventListener('click', (e) => {
+			cart.splice(index, 1);
+			e.target.parentElement.remove();
+			localStorage.setItem('cart', JSON.stringify(cart)); //envoie les nouveaux compte du panier a local storage
+			window.location.reload(); //rafraichir la page pour renvoyer les nouvelles données panier
+		});
 	});
-});
+}
 
 function displayTotalPrice(article, index) {
 	totalPriceArticle = articleQty * article.price;

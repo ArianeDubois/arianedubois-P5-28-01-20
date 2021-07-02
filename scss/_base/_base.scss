@@ -1,3 +1,17 @@
+$medium: 920px;
+$small: 650px;
+@mixin medium-screen {
+	@media (max-width: $medium) {
+		@content;
+	}
+}
+
+@mixin small-screen {
+	@media (max-width: $small) {
+		@content;
+	}
+}
+
 body {
 	color: $main-color;
 	font-family: Helvetica, sans-serif;
@@ -24,6 +38,12 @@ a.button {
 	justify-content: space-between;
 	width: 100vw;
 	position: fixed;
+	@include small-screen {
+		background-color: white;
+
+		height: 61px;
+		z-index: 10;
+	}
 }
 .header-cart {
 	position: relative;
@@ -69,26 +89,14 @@ a.button {
 	top: $white-margin-top;
 	position: fixed;
 	z-index: -10;
+	@include small-screen {
+		z-index: 10;
+	}
 }
 
 .footer {
 	&-contact,
 	&-about {
 		margin: 0 $margin-item 0 $margin-item;
-	}
-}
-
-$medium: 920px;
-$small: 650px;
-
-@mixin medium-screen {
-	@media (max-width: $medium) {
-		@content;
-	}
-}
-
-@mixin small-screen {
-	@media (max-width: $small) {
-		@content;
 	}
 }

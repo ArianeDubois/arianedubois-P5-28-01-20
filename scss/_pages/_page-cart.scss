@@ -10,7 +10,9 @@
 	flex-direction: column;
 	align-self: center;
 	width: $main-width-cart;
-
+	@include small-screen {
+		width: 90vw;
+	}
 	// margin-top: 10vh;
 	position: relative;
 	top: 5vh;
@@ -21,6 +23,12 @@
 		text-align: center;
 		justify-content: space-around;
 		border-bottom: 2px solid $main-color;
+
+		h2 {
+			@include small-screen {
+				font-size: $font-courant;
+			}
+		}
 	}
 
 	&-subtitle-article {
@@ -29,6 +37,9 @@
 
 	&-section-total {
 		font-size: $font-subtitle;
+		@include small-screen {
+			font-size: $font-courant;
+		}
 		padding: 8px;
 		position: relative;
 
@@ -44,10 +55,11 @@
 	&-content-add {
 		max-height: 37vh;
 		overflow: auto;
+
 		.cart-article {
 			display: grid;
 			grid-template-columns: repeat(6, 16.6%);
-			height: 100px;
+			height: 100%;
 			width: 100%;
 			align-items: baseline;
 			text-align: center;
@@ -57,7 +69,6 @@
 		.cart-article-img {
 			grid-column: 1 / span 1;
 			width: 100%;
-			max-height: 100px; //vw
 			object-fit: cover;
 		}
 
@@ -86,6 +97,9 @@
 		.cart-infos-total {
 			margin: auto;
 			font-size: 20px;
+			@include small-screen {
+				font-size: $font-courant;
+			}
 		}
 
 		.cart-article-quantity {
@@ -146,6 +160,10 @@ button:active {
 	align-self: center;
 	width: $main-width-cart;
 	background-color: white;
+	@include small-screen {
+		width: 90vw;
+		max-height: 40vh;
+	}
 
 	&-title {
 		border-bottom: 2px solid $main-color;
@@ -155,7 +173,12 @@ button:active {
 		display: flex;
 		justify-content: space-around;
 		position: relative;
+		background-color: white;
 
+		@include small-screen {
+			flex-direction: column;
+			align-items: center;
+		}
 		.form-infos,
 		.form-address {
 			display: flex;
@@ -164,6 +187,7 @@ button:active {
 			justify-content: space-around;
 			margin: 20px;
 			width: 40%;
+
 			label {
 				margin: 8px 0 4px 0;
 				text-transform: capitalize;
@@ -197,6 +221,9 @@ button:active {
 		cursor: pointer;
 		// font-family: Helvetica, sans-serif;
 		font-size: $font-subtitle;
+		@include small-screen {
+			font-size: $font-courant;
+		}
 		background-color: transparent;
 		border: 2px solid $main-color;
 		padding: 8px;
