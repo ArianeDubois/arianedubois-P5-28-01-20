@@ -38,7 +38,7 @@ function sendInfosOrder() {
 		fetch('http://localhost:3000/api/furniture/order', {
 			method: 'POST',
 			headers: {
-				Accept: 'application/json',
+				// Accept: 'application/json',
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(clientInformations),
@@ -47,7 +47,8 @@ function sendInfosOrder() {
 			.then((resOrder) => {
 				localStorage.setItem('resOrder', JSON.stringify(resOrder)); //envoie des données contact au local storage
 				localStorage.setItem('contact', JSON.stringify(resOrder.contact)); //envoie des données contact au local storage
-				window.location.href = `${window.location.origin}/confirmationOrder.html?orderId=${resOrder.orderId}`;
+				window.location.href = `./confirmation-order.html?orderId=${resOrder.orderId}`;
+				// window.location.href = `${window.location.origin}confirmation-order.html?orderId=${resOrder.orderId}`;
 			})
 			.catch((err) => {
 				alert("une erreur est survenue dans l'envoie des données");
