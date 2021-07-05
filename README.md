@@ -3,7 +3,7 @@ Orinoco
 
 Prérequis pour lancer le projet en local:
 
--installer node.js
+- installer node.js
 - cloner ou télécharger le repository
--ouvrir dans un éditeur de code 
--lancer la commande cd BACK dans le terminal, puis node server
+- ouvrir dans un éditeur de code 
+- lancer la commande cd BACK dans le terminal, puis node server
