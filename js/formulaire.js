@@ -54,7 +54,7 @@ function sendInfosOrder() {
 			});
 	} else if (!validity || cart.length < 1) {
 		document.getElementById('invalideMessage').innerText =
-			'Please fill in this information or add products to your cart';
+			'Please fill in this information and add products to your cart';
 	}
 }
 
