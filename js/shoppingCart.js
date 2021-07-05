@@ -37,7 +37,9 @@ function removeArticle() {
 		});
 	});
 }
+
 removeArticle();
+
 function displayTotalPrice(article, index) {
 	totalPriceArticle = articleQty * article.price;
 	totalPriceCart += totalPriceArticle;
