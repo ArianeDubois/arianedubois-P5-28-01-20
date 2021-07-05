@@ -7,10 +7,8 @@ let totalPriceDisplay = document.querySelector('.cart-infos-total');
 
 cart.forEach((article, index) => {
 	displayArticleToCart(article);
-	removeArticle();
 	changeQuantity(article, index);
 	displayTotalPrice(article, index);
-	// // removeArticle(article, index);
 });
 
 function displayArticleToCart({ name, imageUrl: img, price, _id: id, quantity, varnishSelect }) {
@@ -39,7 +37,7 @@ function removeArticle() {
 		});
 	});
 }
-
+removeArticle();
 function displayTotalPrice(article, index) {
 	totalPriceArticle = articleQty * article.price;
 	totalPriceCart += totalPriceArticle;
