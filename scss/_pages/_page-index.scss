@@ -18,7 +18,7 @@
 	// background-color: $second-color;
 	background-color: white;
 
-	width: 31vw;
+	width: min(31vw, 500px);
 	height: 350px;
 	margin-bottom: 80px;
 	border: 3px solid $main-color;
@@ -32,6 +32,8 @@
 	}
 	@include small-screen {
 		width: 90vw;
+		border-radius: 3em 3em 0em 0;
+
 		margin: auto auto 40px auto;
 	}
 
@@ -44,11 +46,9 @@
 	display: flex;
 	justify-content: center;
 	padding: $margin-item 2vmax 0 2vmax;
+	font-size: $font-subtitle;
 }
 
-.article-price {
-	font-size: 25px;
-}
 .article-img-container {
 	display: flex;
 	justify-content: center;
@@ -61,20 +61,4 @@
 	height: auto;
 	width: 100%;
 	bottom: 500px;
-}
-
-.footer-border {
-	border-top: 3px solid $main-color;
-	width: 100%;
-	bottom: 60px;
-	position: fixed;
-	z-index: -10;
-}
-.footer {
-	display: flex;
-	width: 100%;
-	position: fixed;
-	bottom: 1vw;
-	justify-content: space-between;
-	font-size: 25px;
 }

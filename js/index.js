@@ -37,4 +37,5 @@ function displayQtyCart() {
 	});
 
 	cartIcone.innerHTML = `<i class="fas fa-shopping-cart"></i><div class ="cart-number">${quantityInCart}</div>`; //recupère quantitée dans le panier et ajoute le dernier
+	return quantityInCart;
 }

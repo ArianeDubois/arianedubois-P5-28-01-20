@@ -29,8 +29,6 @@ function displayArticleToCart({ name, imageUrl: img, price, _id: id, quantity, v
 	document.querySelector('.cart-content-add').appendChild(onCartArticle);
 }
 
-//remove Article
-
 function removeArticle() {
 	document.querySelectorAll('.btn-remove').forEach((crossButton, index) => {
 		crossButton.addEventListener('click', (e) => {
@@ -52,7 +50,7 @@ function displayTotalPrice(article, index) {
 function changeQuantity(article, index) {
 	let buttonQuantity = document.querySelectorAll('.cart-article-quantity');
 	let totalPriceDisplay = document.querySelector('.cart-infos-total');
-	articleQty = article.quantity;
+	articleQty = article.quantity; //
 
 	buttonQuantity[index].addEventListener('change', function (e) {
 		// let quantityStorage = article.quantity;

@@ -1,18 +1,19 @@
 //check validity
 let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
 
-// function checkInput ()// quelles données ? {}
-document.querySelectorAll('.form-input').forEach((input, index) => {
-	input.addEventListener('change', (e) => {
-		if (input.checkValidity() == false) {
-			let incorectMessage = document.querySelectorAll('.invalide-message-input')[index];
-
-			incorectMessage.innerText = 'Incorrect field';
-		} else {
-			document.querySelectorAll('.invalide-message-input')[index].innerText = '';
-		}
+function checkInput() {
+	document.querySelectorAll('.form-input').forEach((input, index) => {
+		input.addEventListener('change', (e) => {
+			if (input.checkValidity() == false) {
+				let incorectMessage = document.querySelectorAll('.invalide-message-input')[index];
+				incorectMessage.innerText = 'Incorrect field';
+			} else {
+				document.querySelectorAll('.invalide-message-input')[index].innerText = '';
+			}
+		});
 	});
-});
+}
+checkInput();
 
 function sendInfosOrder() {
 	let validity = document.querySelector('form').checkValidity(); //retourn true/false formulaire
@@ -47,6 +48,9 @@ function sendInfosOrder() {
 				localStorage.setItem('resOrder', JSON.stringify(resOrder)); //envoie des données contact au local storage
 				localStorage.setItem('contact', JSON.stringify(resOrder.contact)); //envoie des données contact au local storage
 				window.location.href = `${window.location.origin}/confirmationOrder.html?orderId=${resOrder.orderId}`;
+			})
+			.catch((err) => {
+				alert("une erreur est survenue dans l'envoie des données");
 			});
 	} else if (!validity || cart.length < 1) {
 		document.getElementById('invalideMessage').innerText =

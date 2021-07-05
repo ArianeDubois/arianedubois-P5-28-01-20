@@ -1,5 +1,5 @@
 function idProduct() {
-	return new URL(window.location.href).searchParams.get('id'); //
+	return new URL(window.location.href).searchParams.get('id');
 }
 
 let cart = JSON.parse(localStorage.getItem('cart')) || []; // initialisation de cart :tablau vide ou storage
@@ -112,7 +112,16 @@ function notificationsAddToCart(product) {
 	addButton.addEventListener('click', () => {
 		cart = JSON.parse(localStorage.getItem('cart')) || [];
 		cartIcone.classList.add('header-cart-notification'); //mouvement de l'icone lors de l'ajout
-		document.querySelector('.add-to-cart-notif').classList.add('slide-in'); //apparition notification
+		setTimeout(function () {
+			cartIcone.classList.remove('header-cart-notification');
+		}, 500);
+
+		document.querySelector('.add-to-cart-notif').classList.add('slide-in'); //apparition
+		setTimeout(function () {
+			document.querySelector('.add-to-cart-notif').classList.remove('slide-in');
+		}, 4000);
+		//delais entre les mouvements d'ajout sur l'icone
+
 		for (let i = 0; i < cart.length; i++) {
 			document.querySelector(
 				'.add-to-cart-notif-message'

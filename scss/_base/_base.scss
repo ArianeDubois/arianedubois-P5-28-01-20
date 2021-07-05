@@ -40,6 +40,7 @@ a.button {
 	position: fixed;
 	@include small-screen {
 		background-color: white;
+		width: 100vw;
 
 		height: 61px;
 		z-index: 10;
@@ -48,7 +49,7 @@ a.button {
 .header-cart {
 	position: relative;
 	font-size: $font-title;
-	margin: $margin-item 2vw;
+	margin: $margin-item 2vmax;
 	display: flex;
 }
 
@@ -65,6 +66,7 @@ a.button {
 
 .header-cart-notification {
 	animation: grow 0.5s ease-in-out;
+	// animation-iteration-count: 2;
 }
 
 @keyframes grow {
@@ -72,7 +74,7 @@ a.button {
 		transform: scale(1);
 	}
 	50% {
-		transform: scale(1.3);
+		transform: scale(1.2);
 	}
 	100% {
 		transform: scale(1);
@@ -94,9 +96,37 @@ a.button {
 	}
 }
 
+.footer-border {
+	border-top: 3px solid $main-color;
+	width: 100%;
+	bottom: $white-margin-top;
+	position: fixed;
+	z-index: -10;
+	@include small-screen {
+		z-index: 10;
+	}
+}
+
 .footer {
+	display: flex;
+	width: 100%;
+	position: fixed;
+	bottom: 1vw;
+	justify-content: space-between;
+	font-size: 25px;
+
+	@include small-screen {
+		background-color: white;
+		z-index: 10;
+		bottom: 0;
+		height: 60px;
+	}
+
 	&-contact,
 	&-about {
 		margin: 0 $margin-item 0 $margin-item;
+		@include small-screen {
+			bottom: 5px;
+		}
 	}
 }
