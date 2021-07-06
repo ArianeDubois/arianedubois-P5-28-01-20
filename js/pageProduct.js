@@ -119,7 +119,7 @@ function notificationsAddToCart(product) {
 		document.querySelector('.add-to-cart-notif').classList.add('slide-in'); //apparition
 		setTimeout(function () {
 			document.querySelector('.add-to-cart-notif').classList.remove('slide-in');
-		}, 4000);
+		}, 8000);
 		//delais entre les mouvements d'ajout sur l'icone
 
 		for (let i = 0; i < cart.length; i++) {
