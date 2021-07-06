@@ -224,8 +224,12 @@ button:active {
 
 		#invalideMessage {
 			position: absolute;
-			bottom: -120px;
-			width: 200px;
+			bottom: -100px;
+			max-width: 25vw;
+			@include small-screen {
+				max-width: 55vw;
+				bottom: -120px;
+			}
 		}
 	}
 	#submit {

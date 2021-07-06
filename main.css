@@ -647,8 +647,14 @@ button:active {
 }
 .paiement form #invalideMessage {
   position: absolute;
-  bottom: -120px;
-  width: 200px;
+  bottom: -100px;
+  max-width: 25vw;
+}
+@media (max-width: 650px) {
+  .paiement form #invalideMessage {
+    max-width: 55vw;
+    bottom: -120px;
+  }
 }
 .paiement #submit {
   display: flex;
