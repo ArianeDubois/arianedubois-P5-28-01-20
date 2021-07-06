@@ -2,6 +2,18 @@ body {
   color: #a406ff;
   font-family: Helvetica, sans-serif;
 }
+body ::-webkit-scrollbar {
+  width: 10px;
+  border-left: 2px solid #a406ff;
+  border-right: 2px solid #a406ff;
+  border-bottom: 2px solid #a406ff;
+  background-color: white;
+}
+body ::-webkit-scrollbar-thumb {
+  width: 5px;
+  height: 10px;
+  background-color: #a406ff;
+}
 
 * {
   margin: 0;
@@ -429,7 +441,6 @@ a.button {
 }
 
 .cart {
-  /* border: 2px solid blueviolet; */
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -683,6 +694,20 @@ button:active {
   color: white;
   width: 30%;
   padding-left: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-left: 2px solid #a406ff;
+  border-right: 2px solid #a406ff;
+  border-bottom: 2px solid #a406ff;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  height: 10px;
+  background-color: #a406ff;
 }
 
 /*# sourceMappingURL=main.css.map */
