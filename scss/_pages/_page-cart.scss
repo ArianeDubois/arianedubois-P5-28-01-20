@@ -228,7 +228,8 @@ button:active {
 			max-width: 25vw;
 			background-color: $main-color;
 			color: white;
-			z-index: 10 @include small-screen {
+			z-index: 10;
+			@include small-screen {
 				max-width: 55vw;
 				bottom: -120px;
 			}
