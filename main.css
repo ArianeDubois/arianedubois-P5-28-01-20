@@ -48,9 +48,14 @@ a.button {
 
 .header-cart {
   position: relative;
-  font-size: min(4vw, 35px);
+  font-size: 35px;
   margin: max(1vmax, 15px) 2vmax;
   display: flex;
+}
+@media (max-width: 650px) {
+  .header-cart {
+    margin: 5px 2vmax;
+  }
 }
 
 .cart-number {
@@ -60,7 +65,7 @@ a.button {
   position: absolute;
   text-align: center;
   width: 100%;
-  top: 15%;
+  top: 14%;
   left: 9%;
 }
 

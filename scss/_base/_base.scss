@@ -48,10 +48,13 @@ a.button {
 }
 .header-cart {
 	position: relative;
-	font-size: $font-title;
+	font-size: 35px;
 
 	margin: $margin-item 2vmax;
 	display: flex;
+	@include small-screen {
+		margin: 5px 2vmax;
+	}
 }
 
 .cart-number {
@@ -61,7 +64,7 @@ a.button {
 	position: absolute;
 	text-align: center;
 	width: 100%;
-	top: 15%;
+	top: 14%;
 	left: 9%;
 }
 
