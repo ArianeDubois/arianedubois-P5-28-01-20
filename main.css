@@ -59,7 +59,7 @@ a.button {
 }
 
 .cart-number {
-  font-size: min(1.4vmax, 15px);
+  font-size: 15px;
   align-self: center;
   color: white;
   position: absolute;
