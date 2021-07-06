@@ -48,7 +48,7 @@ a.button {
 
 .header-cart {
   position: relative;
-  font-size: min(7vw, 35px);
+  font-size: min(4vw, 35px);
   margin: max(1vmax, 15px) 2vmax;
   display: flex;
 }
@@ -81,7 +81,7 @@ a.button {
 }
 .header-title {
   margin: max(1vmax, 15px);
-  font-size: min(7vw, 35px);
+  font-size: min(4vw, 35px);
 }
 
 .header-border {
@@ -116,7 +116,8 @@ a.button {
   display: flex;
   width: 100%;
   position: fixed;
-  bottom: 1vw;
+  align-items: center;
+  bottom: 5px;
   justify-content: space-between;
   font-size: 25px;
 }
@@ -130,7 +131,7 @@ a.button {
 }
 .footer-contact, .footer-about {
   margin: 0 max(1vmax, 15px) 0 max(1vmax, 15px);
-  font-size: min(7vw, 35px);
+  font-size: min(4vw, 35px);
 }
 @media (max-width: 650px) {
   .footer-contact, .footer-about {
@@ -265,7 +266,7 @@ a.button {
 }
 .product .article .product-title,
 .product .article .product-price {
-  font-size: min(7vw, 35px);
+  font-size: min(4vw, 35px);
   text-align: center;
   margin: max(1vmax, 15px);
   padding-bottom: 10px;
@@ -380,7 +381,7 @@ a.button {
   position: absolute;
   top: max(1vmax, 15px);
   left: max(1vmax, 15px);
-  font-size: min(7vw, 35px);
+  font-size: min(4vw, 35px);
   cursor: pointer;
 }
 .add-to-cart-notif .notification-choice {
@@ -532,9 +533,9 @@ a.button {
 .cart-content-add .cart-article-varnish,
 .cart-content-add .cart-infos-total {
   margin: auto;
-  font-size: 20px;
+  font-size: min(2.5vmax, 18px);
 }
-@media (max-width: 650px) {
+@media (max-width: 920px) {
   .cart-content-add .cart-article-title,
 .cart-content-add .cart-article-price,
 .cart-content-add .cart-article-varnish,

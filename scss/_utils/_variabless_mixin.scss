@@ -1,10 +1,27 @@
+$medium: 920px;
+$small: 650px;
+@mixin medium-screen {
+	@media (max-width: $medium) {
+		@content;
+	}
+}
+
+@mixin small-screen {
+	@media (max-width: $small) {
+		@content;
+	}
+}
+
 $main-color: #a406ff;
 // $second-color: rgb(125, 196, 243);
 $second-color: rgb(154, 255, 193);
 
-$font-title: min(7vw, 35px);
+$font-title: min(4vw, 35px);
 $font-subtitle: min(2.5vmax, 18px);
 $font-courant: min(1.4vmax, 15px);
+@include medium-screen {
+	$font-courant: min(1vmax, 10px);
+}
 
 $white-margin-top: max(6vmin, 60px);
 $margin-item: max(1vmax, 15px);

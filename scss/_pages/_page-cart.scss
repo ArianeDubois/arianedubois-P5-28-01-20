@@ -100,8 +100,8 @@
 		.cart-article-varnish,
 		.cart-infos-total {
 			margin: auto;
-			font-size: 20px;
-			@include small-screen {
+			font-size: $font-subtitle;
+			@include medium-screen {
 				font-size: $font-courant;
 			}
 		}
