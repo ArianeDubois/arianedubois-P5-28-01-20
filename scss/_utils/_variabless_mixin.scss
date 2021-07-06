@@ -19,12 +19,9 @@ $second-color: rgb(154, 255, 193);
 $font-title: min(4vw, 35px);
 $font-subtitle: min(2.5vmax, 18px);
 $font-courant: min(1.4vmax, 15px);
-@include medium-screen {
-	$font-courant: min(1vmax, 10px);
-}
 
 $white-margin-top: max(6vmin, 60px);
 $margin-item: max(1vmax, 15px);
 
 $main-width-cart: 50vmax;
-$main-width-index: 70vw;
+$main-width-index: max(73vw, 70vh);
