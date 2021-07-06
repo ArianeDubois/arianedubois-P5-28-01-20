@@ -174,9 +174,10 @@ button:active {
 	align-self: center;
 	width: $main-width-cart;
 	background-color: white;
+
 	@include small-screen {
 		width: 90vw;
-		max-height: 40vh;
+		max-height: 43vh;
 	}
 
 	&-title {
@@ -189,10 +190,6 @@ button:active {
 		position: relative;
 		background-color: white;
 
-		@include small-screen {
-			flex-direction: column;
-			align-items: center;
-		}
 		.form-infos,
 		.form-address {
 			display: flex;
@@ -211,6 +208,10 @@ button:active {
 				background: transparent;
 				border: 2px solid $main-color;
 				padding: 8px;
+				@include small-screen {
+					width: 30vw;
+					max-height: 1vh;
+				}
 
 				&:active,
 				&:focus {
@@ -235,14 +236,20 @@ button:active {
 		cursor: pointer;
 		// font-family: Helvetica, sans-serif;
 		font-size: $font-subtitle;
-		@include small-screen {
-			font-size: $font-courant;
-		}
+
 		background-color: transparent;
 		border: 2px solid $main-color;
 		padding: 8px;
 		margin: $margin-item auto;
 		text-transform: uppercase;
+
+		@include small-screen {
+			font-size: $font-courant;
+			// position: absolute;
+			// bottom: 0px;
+			// z-index: 20;
+			// left: 40vw;
+		}
 		&:hover {
 			background-color: $main-color;
 			color: white;

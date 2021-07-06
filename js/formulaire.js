@@ -48,7 +48,6 @@ function sendInfosOrder() {
 				localStorage.setItem('resOrder', JSON.stringify(resOrder)); //envoie des données contact au local storage
 				localStorage.setItem('contact', JSON.stringify(resOrder.contact)); //envoie des données contact au local storage
 				window.location.href = `./confirmation-order.html?orderId=${resOrder.orderId}`;
-				// window.location.href = `${window.location.origin}confirmation-order.html?orderId=${resOrder.orderId}`;
 			})
 			.catch((err) => {
 				alert("une erreur est survenue dans l'envoie des données");
