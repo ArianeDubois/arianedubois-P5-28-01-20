@@ -42,13 +42,14 @@ a.button {
 		background-color: white;
 		width: 100vw;
 
-		height: 61px;
+		height: 47px;
 		z-index: 10;
 	}
 }
 .header-cart {
 	position: relative;
 	font-size: $font-title;
+
 	margin: $margin-item 2vmax;
 	display: flex;
 }
@@ -83,6 +84,7 @@ a.button {
 
 .header-title {
 	margin: $margin-item;
+	font-size: $font-title;
 }
 
 .header-border {
@@ -93,6 +95,7 @@ a.button {
 	z-index: -10;
 	@include small-screen {
 		z-index: 10;
+		top: 46px;
 	}
 }
 
@@ -104,6 +107,7 @@ a.button {
 	z-index: -10;
 	@include small-screen {
 		z-index: 10;
+		bottom: 41px;
 	}
 }
 
@@ -119,12 +123,14 @@ a.button {
 		background-color: white;
 		z-index: 10;
 		bottom: 0;
-		height: 60px;
+		height: 41px;
 	}
 
 	&-contact,
 	&-about {
 		margin: 0 $margin-item 0 $margin-item;
+		font-size: $font-title;
+
 		@include small-screen {
 			bottom: 5px;
 		}

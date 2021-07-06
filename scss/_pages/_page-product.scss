@@ -1,14 +1,17 @@
 .body-product {
-	overflow: hidden;
+	overflow-x: hidden;
 	scroll-behavior: inherit;
+
+	@include medium-screen {
+		position: fixed;
+	}
 }
 
 .product {
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	display: flex;
 	justify-content: flex-end;
-
 	@include medium-screen {
 		flex-direction: column;
 		justify-content: space-between;
@@ -57,6 +60,9 @@
 			margin: $margin-item;
 			padding-bottom: 10px;
 			border-bottom: 3px solid $main-color;
+			@include small-screen {
+				margin: 0;
+			}
 		}
 
 		.product-price {
@@ -121,6 +127,8 @@
 
 //notification
 .add-to-cart-notif {
+	overflow: hidden;
+
 	width: max(21vw, 280px); //Mobile
 	background-color: white;
 	color: $main-color;
@@ -140,10 +148,11 @@
 	}
 	@include small-screen {
 		width: auto;
+		height: 40vh;
 	}
 
 	&-message {
-		margin: 3vh $margin-item auto $margin-item;
+		margin: 3vh $margin-item 1vh $margin-item;
 		font-size: $font-subtitle;
 		&::after {
 			content: '';

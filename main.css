@@ -29,14 +29,14 @@ a.button {
   .header {
     background-color: white;
     width: 100vw;
-    height: 61px;
+    height: 47px;
     z-index: 10;
   }
 }
 
 .header-cart {
   position: relative;
-  font-size: 35px;
+  font-size: min(7vw, 35px);
   margin: max(1vmax, 15px) 2vmax;
   display: flex;
 }
@@ -69,6 +69,7 @@ a.button {
 }
 .header-title {
   margin: max(1vmax, 15px);
+  font-size: min(7vw, 35px);
 }
 
 .header-border {
@@ -81,6 +82,7 @@ a.button {
 @media (max-width: 650px) {
   .header-border {
     z-index: 10;
+    top: 46px;
   }
 }
 
@@ -94,6 +96,7 @@ a.button {
 @media (max-width: 650px) {
   .footer-border {
     z-index: 10;
+    bottom: 41px;
   }
 }
 
@@ -110,11 +113,12 @@ a.button {
     background-color: white;
     z-index: 10;
     bottom: 0;
-    height: 60px;
+    height: 41px;
   }
 }
 .footer-contact, .footer-about {
   margin: 0 max(1vmax, 15px) 0 max(1vmax, 15px);
+  font-size: min(7vw, 35px);
 }
 @media (max-width: 650px) {
   .footer-contact, .footer-about {
@@ -187,12 +191,17 @@ a.button {
 }
 
 .body-product {
-  overflow: hidden;
+  overflow-x: hidden;
   scroll-behavior: inherit;
+}
+@media (max-width: 920px) {
+  .body-product {
+    position: fixed;
+  }
 }
 
 .product {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: flex-end;
@@ -244,11 +253,17 @@ a.button {
 }
 .product .article .product-title,
 .product .article .product-price {
-  font-size: 35px;
+  font-size: min(7vw, 35px);
   text-align: center;
   margin: max(1vmax, 15px);
   padding-bottom: 10px;
   border-bottom: 3px solid #a406ff;
+}
+@media (max-width: 650px) {
+  .product .article .product-title,
+.product .article .product-price {
+    margin: 0;
+  }
 }
 .product .article .product-price {
   padding-top: 10px;
@@ -300,6 +315,7 @@ a.button {
 }
 
 .add-to-cart-notif {
+  overflow: hidden;
   width: max(21vw, 280px);
   background-color: white;
   color: #a406ff;
@@ -323,10 +339,11 @@ a.button {
 @media (max-width: 650px) {
   .add-to-cart-notif {
     width: auto;
+    height: 40vh;
   }
 }
 .add-to-cart-notif-message {
-  margin: 3vh max(1vmax, 15px) auto max(1vmax, 15px);
+  margin: 3vh max(1vmax, 15px) 1vh max(1vmax, 15px);
   font-size: min(2.5vmax, 18px);
 }
 .add-to-cart-notif-message::after {
@@ -351,7 +368,7 @@ a.button {
   position: absolute;
   top: max(1vmax, 15px);
   left: max(1vmax, 15px);
-  font-size: 35px;
+  font-size: min(7vw, 35px);
   cursor: pointer;
 }
 .add-to-cart-notif .notification-choice {
