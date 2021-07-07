@@ -18,4 +18,4 @@ document.querySelector('.recapitulatif-order-total').textContent = `${totalOrder
 document.querySelector(
 	'.recapitulatif-order-address'
 ).innerHTML = `${resumeOrder.contact.address}<br>${resumeOrder.contact.city}<br>${resumeOrder.contact.postalCode}`;
-localStorage.removeItem('resOrder');
+localStorage.removeItem('resOrder', 'totalPriceCart');
