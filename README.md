@@ -16,7 +16,7 @@ création front-end d'un MVP pour le site e-commerce Orinoco.
 
 # Setup
 * installer node.js (version 6.14.4)
-* cloner ou télécharger le repository
+* cloner ou télécharger le repository [lien du repo](https://github.com/ArianeDubois/arianedubois-P5-28-01-20.git)
 * lancer le back avec la commande ```cd BACK```, puis ```node server```
 * lancer les dépendances ```npm run sass```
 
