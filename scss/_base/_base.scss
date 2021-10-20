@@ -86,6 +86,8 @@ a.button {
 }
 
 .header-title {
+	display: flex;
+	text-transform: uppercase;
 	margin: $margin-item;
 	font-size: $font-title;
 }

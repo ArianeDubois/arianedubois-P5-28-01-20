@@ -34,8 +34,9 @@
 
 		.product-img-container img {
 			position: fixed;
-			width: auto;
-			height: 45vw;
+			object-fit: cover;
+			width: 67.5vw;
+			height: 87.2%;
 			left: 0;
 			top: 63px; //$white-margin-top + 3px border
 			bottom: $white-margin-top;

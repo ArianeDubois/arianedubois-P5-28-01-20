@@ -21,7 +21,7 @@
 		grid-template-columns: repeat(6, 16.6%);
 		text-align: center;
 		justify-content: space-around;
-		border-bottom: 2px solid $main-color;
+		border-bottom: 3px solid $main-color;
 
 		h2 {
 			@include small-screen {
@@ -48,7 +48,7 @@
 			position: absolute;
 			right: 0;
 			margin: auto;
-			border-bottom: 2px solid $main-color;
+			border-bottom: 3px solid $main-color;
 		}
 	}
 	//contenu dynamique
@@ -63,7 +63,7 @@
 			width: 100%;
 			align-items: baseline;
 			text-align: center;
-			border-bottom: 2px solid $main-color;
+			border-bottom: 3px solid $main-color;
 			background-color: white;
 		}
 		.cart-article-img {
@@ -113,6 +113,7 @@
 			background: transparent;
 			border: 2px solid $main-color;
 			color: $main-color;
+			text-align: center;
 			@include small-screen {
 				max-width: 25px;
 				margin: auto 0 auto 0;
@@ -181,7 +182,7 @@ button:active {
 	}
 
 	&-title {
-		border-bottom: 2px solid $main-color;
+		border-bottom: 3px solid $main-color;
 	}
 
 	form {
@@ -206,7 +207,7 @@ button:active {
 			input,
 			input:focus {
 				background: transparent;
-				border: 2px solid $main-color;
+				border: 3px solid $main-color;
 				padding: 8px;
 				@include small-screen {
 					width: 30vw;
@@ -245,7 +246,7 @@ button:active {
 		font-size: $font-subtitle;
 
 		background-color: transparent;
-		border: 2px solid $main-color;
+		border: 3px solid $main-color;
 		padding: 8px;
 		margin: $margin-item auto;
 		text-transform: uppercase;

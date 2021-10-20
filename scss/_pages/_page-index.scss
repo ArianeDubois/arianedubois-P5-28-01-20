@@ -54,6 +54,16 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	&::before {
+		content: '';
+		overflow: hidden;
+		background-color: black;
+		mix-blend-mode: saturation;
+		position: absolute;
+		top: 0;
+		bottom: 0px;
+		width: 100%;
+	}
 }
 
 .article-img {
